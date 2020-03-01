@@ -16,7 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F1243083240BB358006439CC /* Electra13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Electra13.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1243083240BB358006439CC /* Chimera13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimera13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1243086240BB358006439CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1243088240BB358006439CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F124308A240BB358006439CC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -40,7 +40,7 @@
 		F124307A240BB358006439CC = {
 			isa = PBXGroup;
 			children = (
-				F1243085240BB358006439CC /* Electra13 */,
+				F1243085240BB358006439CC /* Chimera13 */,
 				F1243084240BB358006439CC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,12 +48,12 @@
 		F1243084240BB358006439CC /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F1243083240BB358006439CC /* Electra13.app */,
+				F1243083240BB358006439CC /* Chimera13.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F1243085240BB358006439CC /* Electra13 */ = {
+		F1243085240BB358006439CC /* Chimera13 */ = {
 			isa = PBXGroup;
 			children = (
 				F1243086240BB358006439CC /* AppDelegate.swift */,
@@ -64,15 +64,15 @@
 				F1243091240BB359006439CC /* LaunchScreen.storyboard */,
 				F1243094240BB359006439CC /* Info.plist */,
 			);
-			path = Electra13;
+			path = Chimera13;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F1243082240BB358006439CC /* Electra13 */ = {
+		F1243082240BB358006439CC /* Chimera13 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F1243097240BB359006439CC /* Build configuration list for PBXNativeTarget "Electra13" */;
+			buildConfigurationList = F1243097240BB359006439CC /* Build configuration list for PBXNativeTarget "Chimera13" */;
 			buildPhases = (
 				F124307F240BB358006439CC /* Sources */,
 				F1243080240BB358006439CC /* Frameworks */,
@@ -82,9 +82,9 @@
 			);
 			dependencies = (
 			);
-			name = Electra13;
+			name = Chimera13;
 			productName = Electra13;
-			productReference = F1243083240BB358006439CC /* Electra13.app */;
+			productReference = F1243083240BB358006439CC /* Chimera13.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +102,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F124307E240BB358006439CC /* Build configuration list for PBXProject "Electra13" */;
+			buildConfigurationList = F124307E240BB358006439CC /* Build configuration list for PBXProject "Chimera13" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +115,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F1243082240BB358006439CC /* Electra13 */,
+				F1243082240BB358006439CC /* Chimera13 */,
 			);
 		};
 /* End PBXProject section */
@@ -291,8 +291,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.Electra13;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.chimera13;
+				PRODUCT_NAME = Chimera13;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -309,8 +309,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.Electra13;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.chimera13;
+				PRODUCT_NAME = Chimera13;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,7 +319,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F124307E240BB358006439CC /* Build configuration list for PBXProject "Electra13" */ = {
+		F124307E240BB358006439CC /* Build configuration list for PBXProject "Chimera13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1243095240BB359006439CC /* Debug */,
@@ -328,7 +328,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F1243097240BB359006439CC /* Build configuration list for PBXNativeTarget "Electra13" */ = {
+		F1243097240BB359006439CC /* Build configuration list for PBXNativeTarget "Chimera13" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F1243098240BB359006439CC /* Debug */,
