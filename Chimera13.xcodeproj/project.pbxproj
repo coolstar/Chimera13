@@ -56,15 +56,23 @@
 		F1243085240BB358006439CC /* Chimera13 */ = {
 			isa = PBXGroup;
 			children = (
+				F124309A240BB3CE006439CC /* app */,
+				F124308F240BB359006439CC /* Assets.xcassets */,
+				F1243094240BB359006439CC /* Info.plist */,
+			);
+			path = Chimera13;
+			sourceTree = "<group>";
+		};
+		F124309A240BB3CE006439CC /* app */ = {
+			isa = PBXGroup;
+			children = (
 				F1243086240BB358006439CC /* AppDelegate.swift */,
 				F1243088240BB358006439CC /* SceneDelegate.swift */,
 				F124308A240BB358006439CC /* ViewController.swift */,
 				F124308C240BB358006439CC /* Main.storyboard */,
-				F124308F240BB359006439CC /* Assets.xcassets */,
 				F1243091240BB359006439CC /* LaunchScreen.storyboard */,
-				F1243094240BB359006439CC /* Info.plist */,
 			);
-			path = Chimera13;
+			path = app;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -286,7 +294,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCM49M8P5K;
-				INFOPLIST_FILE = Electra13/Info.plist;
+				INFOPLIST_FILE = Chimera13/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +313,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TCM49M8P5K;
-				INFOPLIST_FILE = Electra13/Info.plist;
+				INFOPLIST_FILE = Chimera13/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
