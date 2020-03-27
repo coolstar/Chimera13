@@ -6,6 +6,10 @@
 
 This is the project for the soon-to-be Chimera13 jailbreak.
 
+RIP s0uthwes :(
+
+This project is being developed and open sourced in his memory, as he was interested in seeing it happen.
+
 # Goals
 
 The goal of the project is to build a complete jailbreak for iOS 13.0 and higher in Swift (though C and ObjC is fine where needed)
