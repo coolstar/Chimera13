@@ -1,26 +1,19 @@
-# Chimera13
+<center>
+<h1 align="center">Chimera13</h1>
+  <h3 align="center"> Rest In Peace, s0uthwes, kúp</h5>
+  <h5 align="center"> This project is being developed and open sourced in his memory, as he was interested in seeing it happen. </h4>
+  <h4 align="center">Notes: Chimera13 is a codename. This project will be renamed upon release, and the UI will be added later before release. This project is currently useful for end users as a nonce-setter.</h4>
+  <h2 align="center">IT IS INCOMPLETE AND WILL NOT JAILBREAK YOUR DEVICE AS OF YET.</h3>
+</center>
 
-**NOTE: CHIMERA13 IS A CODENAME. THIS PROJECT WILL BE RENAMED WHEN IT IS READY FOR RELEASE. UI WILL BE ADDED LATER BEFORE RELEASE AS WELL**
+### Goals
+The goal of the project is to build a complete jailbreak for iOS 13.0 and higher in Swift (though C and ObjC is fine where needed) while allowing people to contribute to the jailbreak as well as learn from it.
 
-**NOTE: THIS PROJECT IS CURRENTLY ONLY USEFUL FOR END USERS AS A NONCE-SETTER. IT IS INCOMPLETE AND WILL NOT JAILBREAK YOUR DEVICE YET**
+### Supported Devices
+We wish to initially target A9-A11, though A12+ support may be possible (partial functionality should work on A12 until then).
 
-This is the project for the soon-to-be Chimera13 jailbreak.
-
-RIP s0uthwes :(
-
-This project is being developed and open sourced in his memory, as he was interested in seeing it happen.
-
-# Goals
-
-The goal of the project is to build a complete jailbreak for iOS 13.0 and higher in Swift (though C and ObjC is fine where needed)
-
-# Supported Devices
-
-Goal is to initially target A9-A11, though A12+ support may be possible (partial functionality should work on A12 until then)
-
-# Status
-
-* Exploit: time_waste (extract the zip yourself)
+### Current Status
+* <i>Exploit: time_waste (due to GPL License, extract zip yourself to add)</i>
 * Privilege Escalation (to root): Working (A9 - A13)
 * Nonce Setter: Working (A9 - A13)
 * Remount: In Progress
@@ -29,6 +22,5 @@ Goal is to initially target A9-A11, though A12+ support may be possible (partial
 * Injection Library: substitute or libhooker
 * Bootstrap: Available from Chimera12
 
-# License
-
-Chimera13 is licensed under the 3-Clause BSD License
+<h1 align="center">License</h1>
+<h5 align="center"><i>Chimera13 is licensed under the 3-Clause BSD License</i></h5>
