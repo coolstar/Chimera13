@@ -6,7 +6,6 @@
 #import <sys/mount.h>
 #import <sys/stat.h>
 #import <sys/snapshot.h>
-#import "mach_vm.h"
 #import "kernel_memory.h"
 #import "nvramutils.h"
 #include "iokit.h"

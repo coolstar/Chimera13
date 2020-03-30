@@ -50,7 +50,6 @@
 		F12430D1240BC010006439CC /* exploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = exploit.c; sourceTree = "<group>"; };
 		F12430D8240BC039006439CC /* IOKitLib.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IOKitLib.h; sourceTree = "<group>"; };
 		F12430D9240BC199006439CC /* electra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = electra.swift; sourceTree = "<group>"; };
-		F12430DD240BC361006439CC /* mach_vm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = mach_vm.h; sourceTree = "<group>"; };
 		F12430E4240BC986006439CC /* offsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offsets.swift; sourceTree = "<group>"; };
 		F12430E6240BDC00006439CC /* remount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remount.swift; sourceTree = "<group>"; };
 		F1EC83DE2413416D00D81445 /* nvramutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nvramutils.h; sourceTree = "<group>"; };
@@ -147,7 +146,6 @@
 			isa = PBXGroup;
 			children = (
 				F12430E4240BC986006439CC /* offsets.swift */,
-				F12430DD240BC361006439CC /* mach_vm.h */,
 				F12430E6240BDC00006439CC /* remount.swift */,
 				F1EC83E32413559400D81445 /* nvram.swift */,
 			);
