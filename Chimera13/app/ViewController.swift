@@ -19,7 +19,7 @@ class ViewController: UIViewController {
                               any_proc: rk64(our_task + Offsets.shared.task.bsd_info),
                               enable_tweaks: true,
                               restore_rootfs: false,
-                              nonce: "")
+                              nonce: "0xbd34a880be0b53f3")
         electra.jailbreak()
         // Do any additional setup after loading the view.
     }
