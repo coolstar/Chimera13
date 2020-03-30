@@ -46,6 +46,8 @@ identifier_name:
       error: 50
     allowed_symbols: "_"
     excluded:
+      - S_IFMT
+      - S_IFDIR
       - id
       - vp
       - fd
