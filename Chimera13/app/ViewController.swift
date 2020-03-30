@@ -15,11 +15,13 @@ class ViewController: UIViewController {
         
         get_tfp0()
         let our_task = rk64(task_self + Offsets.shared.ipc_port.ip_kobject)
-        let electra = Electra(tfp0: tfpzero, any_proc: rk64(our_task + Offsets.shared.task.bsd_info), enable_tweaks: true, restore_rootfs: false, nonce: "")
+        let electra = Electra(tfp0: tfpzero,
+                              any_proc: rk64(our_task + Offsets.shared.task.bsd_info),
+                              enable_tweaks: true,
+                              restore_rootfs: false,
+                              nonce: "")
         electra.jailbreak()
         // Do any additional setup after loading the view.
     }
 
-
 }
-
