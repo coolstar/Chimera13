@@ -23,6 +23,7 @@
 		F12430E5240BC986006439CC /* offsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E4240BC986006439CC /* offsets.swift */; };
 		F12430E7240BDC00006439CC /* remount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E6240BDC00006439CC /* remount.swift */; };
 		F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191A9BC2432A948005E0F8F /* amfidtakeover.swift */; };
+		F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */; };
 		F1EC83E02413416D00D81445 /* nvramutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F1EC83DF2413416D00D81445 /* nvramutils.c */; };
 		F1EC83E42413559400D81445 /* nvram.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC83E32413559400D81445 /* nvram.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		F12430E4240BC986006439CC /* offsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offsets.swift; sourceTree = "<group>"; };
 		F12430E6240BDC00006439CC /* remount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remount.swift; sourceTree = "<group>"; };
 		F191A9BC2432A948005E0F8F /* amfidtakeover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amfidtakeover.swift; sourceTree = "<group>"; };
+		F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfigs.xcconfig; sourceTree = "<group>"; };
 		F1EC83DE2413416D00D81445 /* nvramutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = nvramutils.h; sourceTree = "<group>"; };
 		F1EC83DF2413416D00D81445 /* nvramutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = nvramutils.c; sourceTree = "<group>"; };
 		F1EC83E22413421700D81445 /* iokit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iokit.h; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				F124308F240BB359006439CC /* Assets.xcassets */,
 				F124309D240BB72E006439CC /* Chimera13-Bridging-Header.h */,
 				F1243094240BB359006439CC /* Info.plist */,
+				F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */,
 			);
 			path = Chimera13;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1243093240BB359006439CC /* LaunchScreen.storyboard in Resources */,
+				F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */,
 				F1243090240BB359006439CC /* Assets.xcassets in Resources */,
 				F124308E240BB358006439CC /* Main.storyboard in Resources */,
 			);
@@ -290,6 +294,7 @@
 /* Begin XCBuildConfiguration section */
 		F1243095240BB359006439CC /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -343,13 +348,13 @@
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		F1243096240BB359006439CC /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

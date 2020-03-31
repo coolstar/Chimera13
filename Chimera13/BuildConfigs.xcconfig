@@ -1,0 +1,16 @@
+//
+//  BuildConfigs.xcconfig
+//  Chimera13
+//
+//  Created by CoolStar on 3/30/20.
+//  Copyright © 2020 coolstar. All rights reserved.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+ARCHS = arm64 arm64e
+
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[arch=arm64e] = "__arm64e__"
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug][arch=arm64e] = "DEBUG __arm64e__"
+SWIFT_ACTIVE_COMPILATION_CONDITIONS[config=Debug] = DEBUG
