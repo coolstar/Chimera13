@@ -7,7 +7,7 @@
 #import <sys/stat.h>
 #import <sys/snapshot.h>
 #import "kernel_memory.h"
-#import "nvramutils.h"
+#import "cutils.h"
 #include "iokit.h"
 
 kern_return_t
