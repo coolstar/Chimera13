@@ -8,7 +8,8 @@
 #import <sys/snapshot.h>
 #import "kernel_memory.h"
 #import "cutils.h"
-#include "iokit.h"
+#import "iokit.h"
+#import "amfitakeover.h"
 
 kern_return_t
 IORegistryEntrySetCFProperty(io_registry_entry_t, CFStringRef, CFTypeRef);
