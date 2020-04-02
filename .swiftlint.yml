@@ -40,7 +40,8 @@ type_name:
     excluded:
 identifier_name:
     min_length:
-      error: 3
+      error: 2
+      warning: 2
     max_length:
       warning: 40
       error: 50
@@ -48,9 +49,6 @@ identifier_name:
     excluded:
       - S_IFMT
       - S_IFDIR
-      - id
-      - vp
-      - fd
       - i
       - j
       - k

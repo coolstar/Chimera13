@@ -22,12 +22,12 @@
 		F12430DA240BC199006439CC /* electra.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430D9240BC199006439CC /* electra.swift */; };
 		F12430E5240BC986006439CC /* offsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E4240BC986006439CC /* offsets.swift */; };
 		F12430E7240BDC00006439CC /* remount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E6240BDC00006439CC /* remount.swift */; };
+		F13C163024355F4600194BF3 /* dropbear in Resources */ = {isa = PBXBuildFile; fileRef = F13C162F24355F4600194BF3 /* dropbear */; };
 		F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AFA6B24342B9F00A7BB4F /* machoparse.swift */; };
 		F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191A9BC2432A948005E0F8F /* amfidtakeover.swift */; };
 		F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */; };
 		F191A9C324330DD7005E0F8F /* binbag in Resources */ = {isa = PBXBuildFile; fileRef = F191A9C124330DD7005E0F8F /* binbag */; };
 		F191A9C424330DD7005E0F8F /* bash in Resources */ = {isa = PBXBuildFile; fileRef = F191A9C224330DD7005E0F8F /* bash */; };
-		F191A9C724330E98005E0F8F /* amfitakeover.c in Sources */ = {isa = PBXBuildFile; fileRef = F191A9C624330E98005E0F8F /* amfitakeover.c */; };
 		F1EC83E02413416D00D81445 /* cutils.c in Sources */ = {isa = PBXBuildFile; fileRef = F1EC83DF2413416D00D81445 /* cutils.c */; };
 		F1EC83E42413559400D81445 /* nvram.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EC83E32413559400D81445 /* nvram.swift */; };
 /* End PBXBuildFile section */
@@ -58,13 +58,12 @@
 		F12430D9240BC199006439CC /* electra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = electra.swift; sourceTree = "<group>"; };
 		F12430E4240BC986006439CC /* offsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offsets.swift; sourceTree = "<group>"; };
 		F12430E6240BDC00006439CC /* remount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remount.swift; sourceTree = "<group>"; };
+		F13C162F24355F4600194BF3 /* dropbear */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = dropbear; sourceTree = "<group>"; };
 		F16AFA6B24342B9F00A7BB4F /* machoparse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = machoparse.swift; sourceTree = "<group>"; };
 		F191A9BC2432A948005E0F8F /* amfidtakeover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amfidtakeover.swift; sourceTree = "<group>"; };
 		F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfigs.xcconfig; sourceTree = "<group>"; };
 		F191A9C124330DD7005E0F8F /* binbag */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = binbag; sourceTree = "<group>"; };
 		F191A9C224330DD7005E0F8F /* bash */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = bash; sourceTree = "<group>"; };
-		F191A9C524330E98005E0F8F /* amfitakeover.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = amfitakeover.h; sourceTree = "<group>"; };
-		F191A9C624330E98005E0F8F /* amfitakeover.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = amfitakeover.c; sourceTree = "<group>"; };
 		F1EC83DE2413416D00D81445 /* cutils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cutils.h; sourceTree = "<group>"; };
 		F1EC83DF2413416D00D81445 /* cutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cutils.c; sourceTree = "<group>"; };
 		F1EC83E22413421700D81445 /* iokit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iokit.h; sourceTree = "<group>"; };
@@ -148,8 +147,6 @@
 		F124309C240BB71D006439CC /* post-exploit */ = {
 			isa = PBXGroup;
 			children = (
-				F191A9C524330E98005E0F8F /* amfitakeover.h */,
-				F191A9C624330E98005E0F8F /* amfitakeover.c */,
 				F1EC83DF2413416D00D81445 /* cutils.c */,
 				F1EC83DE2413416D00D81445 /* cutils.h */,
 				F1EC83E22413421700D81445 /* iokit.h */,
@@ -176,6 +173,7 @@
 			children = (
 				F191A9C224330DD7005E0F8F /* bash */,
 				F191A9C124330DD7005E0F8F /* binbag */,
+				F13C162F24355F4600194BF3 /* dropbear */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -242,6 +240,7 @@
 			files = (
 				F191A9C424330DD7005E0F8F /* bash in Resources */,
 				F191A9C324330DD7005E0F8F /* binbag in Resources */,
+				F13C163024355F4600194BF3 /* dropbear in Resources */,
 				F1243093240BB359006439CC /* LaunchScreen.storyboard in Resources */,
 				F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */,
 				F1243090240BB359006439CC /* Assets.xcassets in Resources */,
@@ -290,7 +289,6 @@
 				F12430D2240BC010006439CC /* offsets.m in Sources */,
 				F12430D4240BC010006439CC /* IOAccelerator_stuff.c in Sources */,
 				F12430D7240BC010006439CC /* exploit.c in Sources */,
-				F191A9C724330E98005E0F8F /* amfitakeover.c in Sources */,
 				F12430DA240BC199006439CC /* electra.swift in Sources */,
 				F1243089240BB358006439CC /* SceneDelegate.swift in Sources */,
 			);

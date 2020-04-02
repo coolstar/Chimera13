@@ -6,10 +6,8 @@
 #import <sys/mount.h>
 #import <sys/stat.h>
 #import <sys/snapshot.h>
-#import "kernel_memory.h"
 #import "cutils.h"
 #import "iokit.h"
-#import "amfitakeover.h"
 
 kern_return_t
 IORegistryEntrySetCFProperty(io_registry_entry_t, CFStringRef, CFTypeRef);
@@ -30,3 +28,35 @@ struct hfs_mount_args {
     int        journal_flags;          /* flags to pass to journal_open/create */
     int        journal_disable;        /* don't use journaling (potentially dangerous) */
 };
+
+size_t kread(uint64_t where, void *p, size_t size);
+uint32_t rk32(uint64_t where);
+uint64_t rk64(uint64_t where);
+
+size_t kwrite(uint64_t where, const void *p, size_t size);
+void wk32(uint64_t where, uint32_t what);
+void wk64(uint64_t where, uint64_t what);
+unsigned long kstrlen(uint64_t string);
+
+uint64_t find_port(mach_port_name_t port);
+
+kern_return_t mach_vm_write(vm_map_t target_task, mach_vm_address_t address, const uint8_t *data, mach_msg_type_number_t dataCnt);
+kern_return_t mach_vm_region(vm_map_t, mach_vm_address_t *, mach_vm_size_t *, vm_region_flavor_t, vm_region_info_t, mach_msg_type_number_t *, mach_port_t *);
+kern_return_t mach_vm_read_overwrite(vm_map_t target_task, mach_vm_address_t address, mach_vm_size_t size, uint8_t *data, mach_vm_size_t *outsize);
+
+
+#pragma pack(4)
+typedef struct {
+  mach_msg_header_t Head;
+  mach_msg_body_t msgh_body;
+  mach_msg_port_descriptor_t thread;
+  mach_msg_port_descriptor_t task;
+  NDR_record_t NDR;
+} exception_raise_request; // the bits we need at least
+
+typedef struct {
+  mach_msg_header_t Head;
+  NDR_record_t NDR;
+  kern_return_t RetCode;
+} exception_raise_reply;
+#pragma pack()
