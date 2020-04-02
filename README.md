@@ -2,7 +2,7 @@
 
 **NOTE: CHIMERA13 IS A CODENAME. THIS PROJECT WILL BE RENAMED WHEN IT IS READY FOR RELEASE. UI WILL BE ADDED LATER BEFORE RELEASE AS WELL**
 
-**NOTE: THIS PROJECT IS CURRENTLY ONLY USEFUL FOR END USERS AS A NONCE-SETTER + REMOUNT/ROOTFS RESTORE. IT IS INCOMPLETE AND WILL NOT JAILBREAK YOUR DEVICE YET**
+**NOTE: THIS PROJECT CURRENTLY ONLY GIVES YOU A ROOT SHELL VIA SSH. IT IS INCOMPLETE AND WILL NOT GIVE YOU TWEAKS OR A PACKAGE MANAGER YET**
 
 This is the project for the soon-to-be Chimera13 jailbreak.
 
@@ -24,7 +24,9 @@ Goal is to initially target A9-A11, though A12+ support may be possible (partial
 * Privilege Escalation (to root): Working (A9 - A13)
 * Nonce Setter: Working (A9 - A13)
 * Remount: Working (A9 - A13)
-* Codesign Bypass: Update planned from Chimera12
+* Codesign Bypass: Working (A9 - A13)
+* SSH: Working (A9 - A13)
+* CoreTrust Bypass: Update planned from Chimera12
 * Code Injection: Update planned from Chimera12
 * Injection Library: substitute or libhooker
 * Bootstrap: Available from Chimera12
