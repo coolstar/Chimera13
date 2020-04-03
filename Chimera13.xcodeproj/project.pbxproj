@@ -23,6 +23,10 @@
 		F12430E5240BC986006439CC /* offsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E4240BC986006439CC /* offsets.swift */; };
 		F12430E7240BDC00006439CC /* remount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E6240BDC00006439CC /* remount.swift */; };
 		F13C163024355F4600194BF3 /* dropbear in Resources */ = {isa = PBXBuildFile; fileRef = F13C162F24355F4600194BF3 /* dropbear */; };
+		F13C16322436979D00194BF3 /* sethsp4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C16312436979D00194BF3 /* sethsp4.swift */; };
+		F13C163724369C6800194BF3 /* kmem in Resources */ = {isa = PBXBuildFile; fileRef = F13C163324369C6800194BF3 /* kmem */; };
+		F13C163824369C6800194BF3 /* kmap in Resources */ = {isa = PBXBuildFile; fileRef = F13C163424369C6800194BF3 /* kmap */; };
+		F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C163B24371E9600194BF3 /* kernSlide.swift */; };
 		F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AFA6B24342B9F00A7BB4F /* machoparse.swift */; };
 		F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191A9BC2432A948005E0F8F /* amfidtakeover.swift */; };
 		F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */; };
@@ -59,6 +63,10 @@
 		F12430E4240BC986006439CC /* offsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offsets.swift; sourceTree = "<group>"; };
 		F12430E6240BDC00006439CC /* remount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remount.swift; sourceTree = "<group>"; };
 		F13C162F24355F4600194BF3 /* dropbear */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = dropbear; sourceTree = "<group>"; };
+		F13C16312436979D00194BF3 /* sethsp4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sethsp4.swift; sourceTree = "<group>"; };
+		F13C163324369C6800194BF3 /* kmem */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmem; sourceTree = "<group>"; };
+		F13C163424369C6800194BF3 /* kmap */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmap; sourceTree = "<group>"; };
+		F13C163B24371E9600194BF3 /* kernSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kernSlide.swift; sourceTree = "<group>"; };
 		F16AFA6B24342B9F00A7BB4F /* machoparse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = machoparse.swift; sourceTree = "<group>"; };
 		F191A9BC2432A948005E0F8F /* amfidtakeover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amfidtakeover.swift; sourceTree = "<group>"; };
 		F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfigs.xcconfig; sourceTree = "<group>"; };
@@ -164,6 +172,8 @@
 				F1EC83E32413559400D81445 /* nvram.swift */,
 				F191A9BC2432A948005E0F8F /* amfidtakeover.swift */,
 				F16AFA6B24342B9F00A7BB4F /* machoparse.swift */,
+				F13C16312436979D00194BF3 /* sethsp4.swift */,
+				F13C163B24371E9600194BF3 /* kernSlide.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 				F191A9C224330DD7005E0F8F /* bash */,
 				F191A9C124330DD7005E0F8F /* binbag */,
 				F13C162F24355F4600194BF3 /* dropbear */,
+				F13C163424369C6800194BF3 /* kmap */,
+				F13C163324369C6800194BF3 /* kmem */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -244,6 +256,8 @@
 				F1243093240BB359006439CC /* LaunchScreen.storyboard in Resources */,
 				F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */,
 				F1243090240BB359006439CC /* Assets.xcassets in Resources */,
+				F13C163724369C6800194BF3 /* kmem in Resources */,
+				F13C163824369C6800194BF3 /* kmap in Resources */,
 				F124308E240BB358006439CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,12 +289,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13C16322436979D00194BF3 /* sethsp4.swift in Sources */,
 				F12430D5240BC010006439CC /* exploit_utilities.c in Sources */,
 				F12430E5240BC986006439CC /* offsets.swift in Sources */,
 				F12430D3240BC010006439CC /* kernel_memory.c in Sources */,
 				F1EC83E02413416D00D81445 /* cutils.c in Sources */,
 				F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */,
 				F1EC83E42413559400D81445 /* nvram.swift in Sources */,
+				F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */,
 				F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */,
 				F12430D6240BC010006439CC /* IOSurface_stuff.c in Sources */,
 				F124308B240BB358006439CC /* ViewController.swift in Sources */,

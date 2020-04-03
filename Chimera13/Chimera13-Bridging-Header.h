@@ -38,6 +38,8 @@ void wk32(uint64_t where, uint32_t what);
 void wk64(uint64_t where, uint64_t what);
 unsigned long kstrlen(uint64_t string);
 
+uint64_t kalloc(vm_size_t size);
+
 uint64_t find_port(mach_port_name_t port);
 
 kern_return_t mach_vm_write(vm_map_t target_task, mach_vm_address_t address, const uint8_t *data, mach_msg_type_number_t dataCnt);
