@@ -83,12 +83,7 @@ while true {
     print("Found amfid: ", electra.amfid_pid, to: &standardError)
 
     let amfidtakeover = AmfidTakeover(electra: electra)
-    guard amfidtakeover.grabEntitlements(our_proc: electra.our_proc) else {
-        print("Unable to grab entitlements", to: &standardError)
-        exit(5)
-    }
     amfidtakeover.takeoverAmfid(amfid_pid: electra.amfid_pid)
-    amfidtakeover.resetEntitlements(our_proc: electra.our_proc)
     
     let kq = getKqueueForPid(pid: pid_t(electra.amfid_pid))
     var ke = kevent()
