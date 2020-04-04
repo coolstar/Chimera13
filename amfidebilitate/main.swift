@@ -1,5 +1,8 @@
 import CoreFoundation
 
+let MEMORYSTATUS_CMD_SET_JETSAM_TASK_LIMIT = UInt32(6)
+memorystatus_control(MEMORYSTATUS_CMD_SET_JETSAM_TASK_LIMIT, getpid(), 0, nil, 0)
+
 let err = host_get_special_port(mach_host_self(), HOST_LOCAL_NODE, 4, &tfpzero)
 guard err == KERN_SUCCESS else {
     print("Unable to get tfp0")
