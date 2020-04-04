@@ -28,6 +28,7 @@
 		F13C163824369C6800194BF3 /* kmap in Resources */ = {isa = PBXBuildFile; fileRef = F13C163424369C6800194BF3 /* kmap */; };
 		F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C163B24371E9600194BF3 /* kernSlide.swift */; };
 		F13C163E2437F04A00194BF3 /* amfidebilitate in Resources */ = {isa = PBXBuildFile; fileRef = F13C163D2437F04900194BF3 /* amfidebilitate */; };
+		F13C16402438400C00194BF3 /* swiftUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C163F2438400C00194BF3 /* swiftUtil.swift */; };
 		F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AFA6B24342B9F00A7BB4F /* machoparse.swift */; };
 		F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191A9BC2432A948005E0F8F /* amfidtakeover.swift */; };
 		F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */; };
@@ -69,6 +70,7 @@
 		F13C163424369C6800194BF3 /* kmap */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmap; sourceTree = "<group>"; };
 		F13C163B24371E9600194BF3 /* kernSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kernSlide.swift; sourceTree = "<group>"; };
 		F13C163D2437F04900194BF3 /* amfidebilitate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = amfidebilitate; path = amfidebilitate/bin/amfidebilitate; sourceTree = SOURCE_ROOT; };
+		F13C163F2438400C00194BF3 /* swiftUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = swiftUtil.swift; sourceTree = "<group>"; };
 		F16AFA6B24342B9F00A7BB4F /* machoparse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = machoparse.swift; sourceTree = "<group>"; };
 		F191A9BC2432A948005E0F8F /* amfidtakeover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amfidtakeover.swift; sourceTree = "<group>"; };
 		F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfigs.xcconfig; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		F12430E0240BC76A006439CC /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				F13C163F2438400C00194BF3 /* swiftUtil.swift */,
 				F12430E4240BC986006439CC /* offsets.swift */,
 				F12430E6240BDC00006439CC /* remount.swift */,
 				F1EC83E32413559400D81445 /* nvram.swift */,
@@ -297,6 +300,7 @@
 				F12430D5240BC010006439CC /* exploit_utilities.c in Sources */,
 				F12430E5240BC986006439CC /* offsets.swift in Sources */,
 				F12430D3240BC010006439CC /* kernel_memory.c in Sources */,
+				F13C16402438400C00194BF3 /* swiftUtil.swift in Sources */,
 				F1EC83E02413416D00D81445 /* cutils.c in Sources */,
 				F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */,
 				F1EC83E42413559400D81445 /* nvram.swift in Sources */,

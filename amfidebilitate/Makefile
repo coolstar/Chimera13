@@ -10,8 +10,8 @@ LDID = ./ldid
 
 all: $(OUTDIR)/$(TARGET)
 
-SWIFTFLAGS = 
-CFLAGS = 
+SWIFTFLAGS = -Xcc "-Iinclude" -Xcc -DENABLE_XPC
+CFLAGS = -Iinclude -DENABLE_XPC
 
 DEBUG ?= 1
 ifeq (($DEBUG), 1)
@@ -28,7 +28,7 @@ $(OUTDIR):
 %.o: %.c
 	$(CC) -c -o $@ $< $(CFLAGS)
 
-$(OUTDIR)/$(TARGET): main.swift machoparse.swift amfidtakeover.swift offsets.swift electra.swift kmem.o cutils.o | $(OUTDIR)
+$(OUTDIR)/$(TARGET): main.swift machoparse.swift amfidtakeover.swift offsets.swift electra.swift swiftUtil.swift kmem.o cutils.o | $(OUTDIR)
 	$(SWIFTC) -o $@ $^ -import-objc-header amfidebilitate-Bridging-Header.h $(SWIFTFLAGS)
 	strip $@
 	$(LDID) -Ksigncert.p12 -Sent.plist $@
