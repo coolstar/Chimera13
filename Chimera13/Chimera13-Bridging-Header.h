@@ -2,12 +2,18 @@
 //  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
+#import <UIKit/UIKit.h>
 #import <mach/mach.h>
 #import <sys/mount.h>
 #import <sys/stat.h>
 #import <sys/snapshot.h>
 #import "cutils.h"
 #import "iokit.h"
+#import <xpc/xpc.h>
+
+@interface UIApplication(Private)
+- (void)suspend;
+@end
 
 kern_return_t
 IORegistryEntrySetCFProperty(io_registry_entry_t, CFStringRef, CFTypeRef);
@@ -62,3 +68,19 @@ typedef struct {
   kern_return_t RetCode;
 } exception_raise_reply;
 #pragma pack()
+
+//launchd functions (Thanks J)
+extern int xpc_pipe_routine (xpc_object_t xpc_pipe, xpc_object_t inDict, xpc_object_t *reply);
+extern char *xpc_strerror (int);
+
+#define HANDLE_SYSTEM 0
+
+// Some of the routine #s launchd recognizes. There are quite a few subsystems
+
+#define ROUTINE_SUBMIT 100
+#define ROUTINE_ENABLE 0x328
+#define ROUTINE_DISABLE 0x329
+
+#define ROUTINE_START        0x32d    // 813
+#define ROUTINE_STOP        0x32e    // 814
+#define ROUTINE_LIST        0x32f    // 815

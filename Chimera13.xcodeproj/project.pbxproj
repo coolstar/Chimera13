@@ -27,6 +27,7 @@
 		F13C163724369C6800194BF3 /* kmem in Resources */ = {isa = PBXBuildFile; fileRef = F13C163324369C6800194BF3 /* kmem */; };
 		F13C163824369C6800194BF3 /* kmap in Resources */ = {isa = PBXBuildFile; fileRef = F13C163424369C6800194BF3 /* kmap */; };
 		F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C163B24371E9600194BF3 /* kernSlide.swift */; };
+		F13C163E2437F04A00194BF3 /* amfidebilitate in Resources */ = {isa = PBXBuildFile; fileRef = F13C163D2437F04900194BF3 /* amfidebilitate */; };
 		F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16AFA6B24342B9F00A7BB4F /* machoparse.swift */; };
 		F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */ = {isa = PBXBuildFile; fileRef = F191A9BC2432A948005E0F8F /* amfidtakeover.swift */; };
 		F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */; };
@@ -67,6 +68,7 @@
 		F13C163324369C6800194BF3 /* kmem */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmem; sourceTree = "<group>"; };
 		F13C163424369C6800194BF3 /* kmap */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmap; sourceTree = "<group>"; };
 		F13C163B24371E9600194BF3 /* kernSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kernSlide.swift; sourceTree = "<group>"; };
+		F13C163D2437F04900194BF3 /* amfidebilitate */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = amfidebilitate; path = amfidebilitate/bin/amfidebilitate; sourceTree = SOURCE_ROOT; };
 		F16AFA6B24342B9F00A7BB4F /* machoparse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = machoparse.swift; sourceTree = "<group>"; };
 		F191A9BC2432A948005E0F8F /* amfidtakeover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = amfidtakeover.swift; sourceTree = "<group>"; };
 		F191A9BE2432EC17005E0F8F /* BuildConfigs.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BuildConfigs.xcconfig; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 		F191A9C024330DCD005E0F8F /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F13C163D2437F04900194BF3 /* amfidebilitate */,
 				F191A9C224330DD7005E0F8F /* bash */,
 				F191A9C124330DD7005E0F8F /* binbag */,
 				F13C162F24355F4600194BF3 /* dropbear */,
@@ -250,6 +253,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F13C163E2437F04A00194BF3 /* amfidebilitate in Resources */,
 				F191A9C424330DD7005E0F8F /* bash in Resources */,
 				F191A9C324330DD7005E0F8F /* binbag in Resources */,
 				F13C163024355F4600194BF3 /* dropbear in Resources */,
@@ -373,10 +377,6 @@
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;

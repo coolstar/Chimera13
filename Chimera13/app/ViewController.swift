@@ -16,25 +16,26 @@ class ViewController: UIViewController {
         
         get_tfp0()
         let our_task = rk64(task_self + Offsets.shared.ipc_port.ip_kobject)
-        electra = Electra(tfp0: tfpzero,
-                          any_proc: rk64(our_task + Offsets.shared.task.bsd_info),
-                          enable_tweaks: true,
-                          restore_rootfs: false,
-                          nonce: "0xbd34a880be0b53f3")
-        electra?.jailbreak()
-        
-        UIApplication.shared.beginBackgroundTask {
-            print("App about to close...")
+        let electra = Electra(tfp0: tfpzero,
+                              any_proc: rk64(our_task + Offsets.shared.task.bsd_info),
+                              enable_tweaks: true,
+                              restore_rootfs: false,
+                              nonce: "0xbd34a880be0b53f3")
+        self.electra = electra
+        let err = electra.jailbreak()
+        if err == .ERR_NOERR {
+            let controller = UIAlertController(title: "Jailbroken", message: "SSH is running! Enjoy", preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "Exit", style: .default, handler: { _ in
+                controller.dismiss(animated: true) {
+                    UIApplication.shared.suspend()
+                    DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                        exit(0)
+                    }
+                }
+            }))
+            self.present(controller, animated: true, completion: nil)
         }
+
         // Do any additional setup after loading the view.
     }
-    
-    @IBAction func reboot() {
-        electra?.rebootDevice()
-    }
-    
-    @IBAction func exit() {
-        electra?.exitApp()
-    }
-
 }
