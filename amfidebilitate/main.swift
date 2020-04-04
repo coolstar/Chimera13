@@ -26,7 +26,7 @@ func getKqueueForPid(pid: pid_t) -> Int32 {
 
 var standardError = FileHandle.standardError
 
-func startAmfid(){
+func startAmfid() {
     let dict = xpc_dictionary_create(nil, nil, 0)
     
     xpc_dictionary_set_uint64(dict, "subsystem", 3)
