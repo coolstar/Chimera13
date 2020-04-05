@@ -4,6 +4,8 @@
 #import "cutils.h"
 #import "kmem.h"
 
+int csops(pid_t pid, unsigned int ops, uint32_t *useraddr, size_t usersize);
+
 #pragma pack(4)
 typedef struct {
   mach_msg_header_t Head;
