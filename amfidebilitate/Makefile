@@ -2,7 +2,7 @@ ARCH ?= arm64
 TARGET = amfidebilitate
 OUTDIR ?= bin
 
-SWIFTC = xcrun -sdk iphoneos swiftc -target $(ARCH)-apple-ios13.0 -v
+SWIFTC = xcrun -sdk iphoneos swiftc -target $(ARCH)-apple-ios13.0
 CC = xcrun -sdk iphoneos clang -arch $(ARCH)
 LDID = ./ldid
 

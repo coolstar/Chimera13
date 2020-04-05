@@ -3,7 +3,6 @@ import Foundation
 func getKqueueForPid(pid: pid_t) -> Int32 {
     let kq = kqueue()
     guard kq != -1 else {
-        print("Unable to create kqueue")
         return -1
     }
     
@@ -18,7 +17,6 @@ func getKqueueForPid(pid: pid_t) -> Int32 {
 
     let rc = kevent(kq, &ke, 1, nil, 0, nil)
     guard rc >= 0 else {
-        print("Unable to get kevent")
         return -1
     }
     return kq
@@ -41,11 +39,9 @@ func startAmfid() {
         let outDict = outDict {
         let rc2 = Int32(xpc_dictionary_get_int64(outDict, "error"))
         if rc2 != 0 {
-            print(String(format: "Error starting service: %s", xpc_strerror(rc2)), to: &standardError)
             return
         }
     } else if rc != 0 {
-        print(String(format: "Error starting service (no outdict): %s", xpc_strerror(rc)), to: &standardError)
         return
     }
 }
@@ -55,12 +51,10 @@ memorystatus_control(MEMORYSTATUS_CMD_SET_JETSAM_TASK_LIMIT, getpid(), 0, nil, 0
 
 let err = host_get_special_port(mach_host_self(), HOST_LOCAL_NODE, 4, &tfpzero)
 guard err == KERN_SUCCESS else {
-    print("Unable to get tfp0", to: &standardError)
     exit(5)
 }
 
 guard let allProcCStr = getenv("allProc") else {
-    print("Unable to get allproc", to: &standardError)
     exit(5)
 }
 
@@ -69,7 +63,6 @@ let allProc = strtoull(allProcCStr, nil, 16)
 let electra = Electra(tfp0: tfpzero, all_proc: allProc)
 
 while true {
-    print("Searching for amfid...", to: &standardError)
     let last_amfidPid = electra.amfid_pid
     while electra.amfid_pid == last_amfidPid {
         electra.populate_procs() //gets us TF_PLATFORM
@@ -77,10 +70,8 @@ while true {
             break
         }
         sleep(1)
-        print("Asking launchd to restart amfid before we continue...", to: &standardError)
         startAmfid()
     }
-    print("Found amfid: ", electra.amfid_pid, to: &standardError)
 
     let amfidtakeover = AmfidTakeover(electra: electra)
     amfidtakeover.takeoverAmfid(amfid_pid: electra.amfid_pid)
@@ -91,10 +82,7 @@ while true {
     if rc > 0 {
         close(kq)
         
-        print("amfid dead...", to: &standardError)
         amfidtakeover.cleanupAmfidTakeover()
-        
-        print("Asking launchd to restart amfid before we continue...", to: &standardError)
         startAmfid()
     }
 }
