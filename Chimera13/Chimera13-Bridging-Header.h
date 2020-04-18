@@ -12,9 +12,6 @@
 #import "sethsp4.h"
 #import <xpc/xpc.h>
 
-#define io_makebits(active, otype, kotype)    \
-(((active) ? IO_BITS_ACTIVE : 0) | ((otype) << 16) |  (kotype))
-
 @interface UIApplication(Private)
 - (void)suspend;
 @end
