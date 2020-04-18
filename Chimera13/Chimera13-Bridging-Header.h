@@ -9,7 +9,11 @@
 #import <sys/snapshot.h>
 #import "cutils.h"
 #import "iokit.h"
+#import "sethsp4.h"
 #import <xpc/xpc.h>
+
+#define io_makebits(active, otype, kotype)    \
+(((active) ? IO_BITS_ACTIVE : 0) | ((otype) << 16) |  (kotype))
 
 @interface UIApplication(Private)
 - (void)suspend;
@@ -84,3 +88,5 @@ extern char *xpc_strerror (int);
 #define ROUTINE_START        0x32d    // 813
 #define ROUTINE_STOP        0x32e    // 814
 #define ROUTINE_LIST        0x32f    // 815
+
+int set_tfp0_hsp4(mach_port_t tfp0);

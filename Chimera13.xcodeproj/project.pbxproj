@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		110EA324244929BA00E29626 /* sethsp4.c in Sources */ = {isa = PBXBuildFile; fileRef = 110EA323244929BA00E29626 /* sethsp4.c */; };
 		F1243087240BB358006439CC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1243086240BB358006439CC /* AppDelegate.swift */; };
 		F1243089240BB358006439CC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1243088240BB358006439CC /* SceneDelegate.swift */; };
 		F124308B240BB358006439CC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F124308A240BB358006439CC /* ViewController.swift */; };
@@ -23,7 +24,6 @@
 		F12430E5240BC986006439CC /* offsets.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E4240BC986006439CC /* offsets.swift */; };
 		F12430E7240BDC00006439CC /* remount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12430E6240BDC00006439CC /* remount.swift */; };
 		F13C163024355F4600194BF3 /* dropbear in Resources */ = {isa = PBXBuildFile; fileRef = F13C162F24355F4600194BF3 /* dropbear */; };
-		F13C16322436979D00194BF3 /* sethsp4.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C16312436979D00194BF3 /* sethsp4.swift */; };
 		F13C163724369C6800194BF3 /* kmem in Resources */ = {isa = PBXBuildFile; fileRef = F13C163324369C6800194BF3 /* kmem */; };
 		F13C163824369C6800194BF3 /* kmap in Resources */ = {isa = PBXBuildFile; fileRef = F13C163424369C6800194BF3 /* kmap */; };
 		F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F13C163B24371E9600194BF3 /* kernSlide.swift */; };
@@ -39,6 +39,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		110EA322244929BA00E29626 /* sethsp4.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sethsp4.h; sourceTree = "<group>"; };
+		110EA323244929BA00E29626 /* sethsp4.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sethsp4.c; sourceTree = "<group>"; };
 		F1243083240BB358006439CC /* Chimera13.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chimera13.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1243086240BB358006439CC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F1243088240BB358006439CC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -65,7 +67,6 @@
 		F12430E4240BC986006439CC /* offsets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = offsets.swift; sourceTree = "<group>"; };
 		F12430E6240BDC00006439CC /* remount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = remount.swift; sourceTree = "<group>"; };
 		F13C162F24355F4600194BF3 /* dropbear */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = dropbear; sourceTree = "<group>"; };
-		F13C16312436979D00194BF3 /* sethsp4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = sethsp4.swift; sourceTree = "<group>"; };
 		F13C163324369C6800194BF3 /* kmem */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmem; sourceTree = "<group>"; };
 		F13C163424369C6800194BF3 /* kmap */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = kmap; sourceTree = "<group>"; };
 		F13C163B24371E9600194BF3 /* kernSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = kernSlide.swift; sourceTree = "<group>"; };
@@ -139,6 +140,8 @@
 		F124309B240BB717006439CC /* exploit */ = {
 			isa = PBXGroup;
 			children = (
+				110EA323244929BA00E29626 /* sethsp4.c */,
+				110EA322244929BA00E29626 /* sethsp4.h */,
 				F12430D8240BC039006439CC /* IOKitLib.h */,
 				F12430CB240BC010006439CC /* exploit_utilities.c */,
 				F12430CF240BC010006439CC /* exploit_utilities.h */,
@@ -177,7 +180,6 @@
 				F1EC83E32413559400D81445 /* nvram.swift */,
 				F191A9BC2432A948005E0F8F /* amfidtakeover.swift */,
 				F16AFA6B24342B9F00A7BB4F /* machoparse.swift */,
-				F13C16312436979D00194BF3 /* sethsp4.swift */,
 				F13C163B24371E9600194BF3 /* kernSlide.swift */,
 			);
 			path = utils;
@@ -296,13 +298,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F13C16322436979D00194BF3 /* sethsp4.swift in Sources */,
 				F12430D5240BC010006439CC /* exploit_utilities.c in Sources */,
 				F12430E5240BC986006439CC /* offsets.swift in Sources */,
 				F12430D3240BC010006439CC /* kernel_memory.c in Sources */,
 				F13C16402438400C00194BF3 /* swiftUtil.swift in Sources */,
 				F1EC83E02413416D00D81445 /* cutils.c in Sources */,
 				F16AFA6C24342BA000A7BB4F /* machoparse.swift in Sources */,
+				110EA324244929BA00E29626 /* sethsp4.c in Sources */,
 				F1EC83E42413559400D81445 /* nvram.swift in Sources */,
 				F13C163C24371E9600194BF3 /* kernSlide.swift in Sources */,
 				F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */,
@@ -457,7 +459,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z25WL7QR46;
 				INFOPLIST_FILE = Chimera13/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -468,7 +470,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.chimera13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chr1sstuff.chimera13;
 				PRODUCT_NAME = Chimera13;
 				SWIFT_OBJC_BRIDGING_HEADER = "Chimera13/Chimera13-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -483,7 +485,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Z25WL7QR46;
 				INFOPLIST_FILE = Chimera13/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -494,7 +496,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.chimera13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.chr1sstuff.chimera13;
 				PRODUCT_NAME = Chimera13;
 				SWIFT_OBJC_BRIDGING_HEADER = "Chimera13/Chimera13-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
