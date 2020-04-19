@@ -432,7 +432,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chr1sstuff.chimera13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.chimera13;
 				PRODUCT_NAME = Chimera13;
 				SWIFT_OBJC_BRIDGING_HEADER = "Chimera13/Chimera13-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -458,7 +458,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chr1sstuff.chimera13;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yourcompany.chimera13;
 				PRODUCT_NAME = Chimera13;
 				SWIFT_OBJC_BRIDGING_HEADER = "Chimera13/Chimera13-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
