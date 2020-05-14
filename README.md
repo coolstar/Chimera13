@@ -1,36 +1,28 @@
-# Chimera13
+# Odyssey
 
-**NOTE: CHIMERA13 IS A CODENAME. THIS PROJECT WILL BE RENAMED WHEN IT IS READY FOR RELEASE. UI WILL BE ADDED LATER BEFORE RELEASE AS WELL**
-
-**NOTE: THIS PROJECT CURRENTLY ONLY GIVES YOU A ROOT SHELL VIA SSH. IT IS INCOMPLETE AND WILL NOT GIVE YOU TWEAKS OR A PACKAGE MANAGER YET**
-
-This is the project for the soon-to-be Chimera13 jailbreak.
+This is the project for the Odyssey jailbreak.
 
 RIP s0uthwes :(
 
 This project is being developed and open sourced in his memory, as he was interested in seeing it happen.
 
-# Goals
-
-The goal of the project is to build a complete jailbreak for iOS 13.0 and higher in Swift (though C and ObjC is fine where needed)
-
 # Supported Devices
 
-Goal is to initially target A9-A11, though A12+ support may be possible (partial functionality should work on A12 until then)
+All A9-A13 devices on iOS 13.0-13.5
 
 # Status
 
-* Exploit: time_waste (extract the zip yourself)
-* Privilege Escalation (to root): Working (A9 - A13)
-* Nonce Setter: Working (A9 - A13)
-* Remount: Working (A9 - A13)
-* Codesign Bypass: Working (A9 - A13)
-* SSH: Working (A9 - A13)
-* CoreTrust Bypass: Update planned from Chimera12
-* Code Injection: Update planned from Chimera12
-* Injection Library: substitute or libhooker
-* Bootstrap: Available from Chimera12
+* Exploit: Re-implementation of lightspeed (Working)
+* Privilege Escalation (to root): Working 
+* Nonce Setter: Working 
+* Remount: Working 
+* Codesign Bypass: Working 
+* SSH: Working
+* CoreTrust Bypass: Working
+* Code Injection: Working
+* Injection Library: libhooker
+* Bootstrap: Procursus included
 
 # License
 
-Chimera13 is licensed under the 3-Clause BSD License
+Odyssey is licensed under the 3-Clause BSD License

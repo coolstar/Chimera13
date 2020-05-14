@@ -1,4 +1,7 @@
 #include "kmem.h"
+#ifdef DEBUG
+#include <stdio.h>
+#endif
 #define MAX_CHUNK_SIZE 0xFFF
 
 mach_port_t tfpzero;

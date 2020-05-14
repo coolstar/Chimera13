@@ -26,8 +26,8 @@ excluded:
     - SwiftLint/Common/3rdPartyLib
     - Deps
 line_length:
-    warning: 150
-    error: 200
+    warning: 200
+    error: 250
     ignores_function_declarations: true
     ignores_comments: true
     ignores_urls: true
@@ -49,6 +49,11 @@ identifier_name:
     excluded:
       - S_IFMT
       - S_IFDIR
+      - P_SUGID
+      - a
+      - b
+      - c
+      - d
       - i
       - j
       - k
@@ -62,13 +67,13 @@ function_parameter_count:
     warning: 6
     error: 8
 type_body_length:
-    warning: 300
-    error: 500
+    warning: 400
+    error: 600
 file_length:
     warning: 1000
     error: 1500
     ignore_comment_only_lines: true
 cyclomatic_complexity:
-    warning: 40
-    error: 60
+    warning: 50
+    error: 70
 reporter: "xcode"

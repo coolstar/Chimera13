@@ -7,6 +7,9 @@ Odyssey/exploit/*.h
 Odyssey/exploit/*.c
 Odyssey/exploit/*.m
 
+## No DS_Store
+.DS_Store
+
 ## User settings
 xcuserdata/
 
@@ -93,3 +96,8 @@ fastlane/test_output
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+migrationsupport/bin/migration
+SwiftZSTD.framework
+Payload
+*.o
+amfidebilitate/bin/amfidebilitate

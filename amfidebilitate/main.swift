@@ -80,6 +80,7 @@ while true {
     var ke = kevent()
     let rc = kevent(kq, nil, 0, &ke, 1, nil)
     if rc > 0 {
+        print("amfid exited. Restarting it...", to: &standardError)
         close(kq)
         
         amfidtakeover.cleanupAmfidTakeover()
