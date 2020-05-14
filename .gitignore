@@ -2,6 +2,11 @@
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
 
+# Don't commit time_waste
+Odyssey/exploit/*.h
+Odyssey/exploit/*.c
+Odyssey/exploit/*.m
+
 ## User settings
 xcuserdata/
 
