@@ -26,10 +26,10 @@ Goal is to initially target A9-A11, though A12+ support may be possible (partial
 * Remount: Working (A9 - A13)
 * Codesign Bypass: Working (A9 - A13)
 * SSH: Working (A9 - A13)
-* CoreTrust Bypass: Update planned from Chimera12
-* Code Injection: Update planned from Chimera12
-* Injection Library: substitute or libhooker
-* Bootstrap: Available from Chimera12
+* CoreTrust Bypass: Releasing soon (A9 - A13)
+* Code Injection: Releasing soon (A9 - A13)
+* Injection Library: libhooker (Releasing soon -> A9 - A13)
+* Bootstrap: Releasing soon (A9 - A13)
 
 # License
 
