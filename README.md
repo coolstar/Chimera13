@@ -26,3 +26,5 @@ All A9-A13 devices on iOS 13.0-13.5
 # License
 
 Odyssey is licensed under the 3-Clause BSD License
+
+Note: should you choose to include time_waste, you must license the project as GPL. If you choose to only use tardy0n, you may license it as BSD-3.
