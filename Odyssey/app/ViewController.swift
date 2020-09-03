@@ -239,7 +239,7 @@ class ViewController: UIViewController, ElectraUI {
                         tfp0 = tfpzero
                         let our_task = getOurTask()
                         any_proc = rk64(our_task + Offsets.shared.task.bsd_info)
-                    } else if #available(iOS 13, *){
+                    } else if #available(iOS 13, *) {
                         print("Selecting time_waste for iOS 13.0 -> 13.3")
                         get_tfp0()
                         tfp0 = tfpzero
