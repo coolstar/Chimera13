@@ -14,6 +14,11 @@ private struct LatestVersionStruct: Decodable {
     let downloadLink: URL
 }
 
+enum AVMError: Error {
+    case noData
+    case inaccessabileCurrentVerison
+}
+
 private let latestReleaseURL = URL(string: "https://theodyssey.dev/api/latest-release.json")!
 
 final class AppVersionManager {
@@ -22,24 +27,30 @@ final class AppVersionManager {
     
     private init() {}
     
-    func doesApplicationRequireUpdate(completionHandler: @escaping ((Bool?) -> Void)) {
+    func doesApplicationRequireUpdate(completionHandler: @escaping ((Result<Bool, Error>) -> Void)) {
         let session = URLSession(configuration: .default)
         session.dataTask(with: latestReleaseURL) { data, response, error in
-            guard error == nil else {
-                completionHandler(nil)
+            if let error = error {
+                completionHandler(.failure(error))
                 return
             }
             
             guard let data = data else {
-                completionHandler(nil)
+                completionHandler(.failure(AVMError.noData))
                 return
             }
-            let currentRelease = try! JSONDecoder().decode(LatestVersionStruct.self, from: data)
+            do {
+                let currentRelease = try JSONDecoder().decode(LatestVersionStruct.self, from: data)
             
-            self.cachedLatestVersion = currentRelease
+                self.cachedLatestVersion = currentRelease
             
-            let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            completionHandler(currentVersion.compare(currentRelease.versionNumber) == .orderedAscending)
+                let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+                completionHandler(
+                    .success(currentVersion.compare(currentRelease.versionNumber) == .orderedAscending)
+                )
+            } catch {
+                completionHandler(.failure(error))
+            }
         }.resume()
     }
     

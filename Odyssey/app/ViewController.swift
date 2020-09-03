@@ -87,15 +87,19 @@ class ViewController: UIViewController, ElectraUI {
         let updateTapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(shouldOpenUpdateLink))
         updateOdysseyView.addGestureRecognizer(updateTapGestureRecogniser)
         
-        AppVersionManager.shared.doesApplicationRequireUpdate { requiresUpdate in
-            guard let requiresUpdate = requiresUpdate,
-                  requiresUpdate else {
+        AppVersionManager.shared.doesApplicationRequireUpdate { result in
+            switch result {
+            case .failure(let error):
+                print(error)
                 return
-            }
             
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.5) {
-                    self.updateOdysseyView.isHidden = false
+            case .success(let updateRequired):
+                if (updateRequired) {
+                    DispatchQueue.main.async {
+                        UIView.animate(withDuration: 0.5) {
+                            self.updateOdysseyView.isHidden = false
+                        }
+                    }
                 }
             }
         }
