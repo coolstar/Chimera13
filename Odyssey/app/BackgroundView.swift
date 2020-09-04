@@ -29,7 +29,7 @@ class BackgroundView: UIView {
             case .escaped:
                 let blur = (NSClassFromString("_UICustomBlurEffect") as! UIBlurEffect.Type).init()
                 blur.setValue(45, forKey: "blurRadius")
-                blur.setValue(UIColor(red: 255, green: 255, blue: 255, alpha: 0.3), forKey: "colorTint")
+                blur.setValue(UIColor(white: 1.0, alpha: 0.3), forKey: "colorTint")
                 blur.setValue(1.8, forKey: "saturationDeltaFactor")
                 blur.setValue(1, forKey: "darkeningTintAlpha")
                 blur.setValue(1, forKey: "darkeningTintSaturation")
@@ -40,16 +40,16 @@ class BackgroundView: UIView {
         
         var vibrancyEffect: UIVibrancyEffect? {
             switch self {
-            case .normal: return UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
-            default: return nil
+            case .normal:
+                return UIVibrancyEffect(blurEffect: UIBlurEffect(style: .extraLight))
+            default:
+                return nil
             }
         }
         
-        #if os(iOS)
         var navigationBarStyle: UIBarStyle {
             return self == .escaped ? .black : .default
         }
-        #endif
     }
     
     override init(frame: CGRect) {
@@ -90,17 +90,28 @@ class BackgroundView: UIView {
     }
     
     private func updateBlurView(with effect: UIVisualEffect?, animated: Bool) {
-        guard animated else { blurView.effect = effect; return }
-        UIView.animate(withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.9, options: [.allowUserInteraction, .beginFromCurrentState], animations: {
-            self.updateBlurView(with: effect, animated: false)
-        }, completion: nil)
+        guard animated else {
+            blurView.effect = effect
+            return
+        }
+        
+        UIView.animate(
+            withDuration: 0.35, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 0.9,
+            options: [.allowUserInteraction, .beginFromCurrentState],
+            animations: { [unowned self] in
+                self.updateBlurView(with: effect, animated: false)
+            }
+        )
     }
     
     private func update(vibrancyView: UIVisualEffectView, with effect: UIVisualEffect?, animated: Bool) {
-        guard animated else { vibrancyView.effect = effect; return }
+        guard animated else {
+            vibrancyView.effect = effect
+            return
+        }
         UIView.transition(with: vibrancyView, duration: 0.35, options: .allowAnimatedContent, animations: {
             vibrancyView.effect = effect
-        }, completion: nil)
+        })
     }
 
     func createVibrancyView() -> UIVisualEffectView {

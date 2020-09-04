@@ -16,9 +16,9 @@ class NonceManager: TextButtonDelegate {
         if UserDefaults.standard.string(forKey: "generator") == nil {
             UserDefaults.standard.set(defaultGenerator, forKey: "generator")
         }
-        guard let currentGenerator = UserDefaults.standard.string(forKey: "generator") else {
-            return
-        }
+        
+        let currentGenerator = UserDefaults.standard.string(forKey: "generator") ?? defaultGenerator
+        
         if !isGeneratorValid(generator: currentGenerator) {
             UserDefaults.standard.set(defaultGenerator, forKey: "generator")
         }

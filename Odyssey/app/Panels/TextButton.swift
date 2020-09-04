@@ -75,7 +75,7 @@ class TextButton: TableButton, UITextFieldDelegate {
             if delegate.isInputValid(input: text) {
                 delegate.receiveInput(input: text)
             } else {
-                viewController.showAlert(title: alertTitle, message: alertMessage, sync: false, callback: nil)
+                viewController.showAlert(alertTitle, alertMessage, sync: false)
             }
         }
         
