@@ -39,10 +39,13 @@ class AnimatingColourView: UIView {
     }
     
     @objc func tick() {
-        UIView.transition(with: self, duration: 4, options: .transitionCrossDissolve, animations: {
-            let backgrounds = ThemesManager.shared.currentTheme.colorViewBackgrounds
-            self.setup(for: backgrounds.randomElement())
-        }, completion: nil)
+        UIView.transition(
+            with: self, duration: 4, options: .transitionCrossDissolve,
+            animations: { [unowned self] in
+                let backgrounds = ThemesManager.shared.currentTheme.colorViewBackgrounds
+                self.setup(for: backgrounds.randomElement())
+            }
+        )
     }
     
     private func setup(for background: GradientBackground?) {
@@ -71,7 +74,9 @@ class AnimatingColourView: UIView {
             }
             
             init(colours: [UIColor], angle: Double = 0) {
-                self.stops = colours.enumerated().map { (colour: $0.element, position: 1.0 / Double(colours.count - 1) * Double($0.offset)) }
+                self.stops = colours.enumerated().map {
+                    (colour: $0.element, position: 1.0 / Double(colours.count - 1) * Double($0.offset))
+                }
                 self.angle = angle
             }
         }

@@ -14,6 +14,11 @@ private struct LatestVersionStruct: Decodable {
     let downloadLink: URL
 }
 
+enum AVMError: Error {
+    case noData
+    case inaccessabileCurrentVerison
+}
+
 private let latestReleaseURL = URL(string: "https://theodyssey.dev/api/latest-release.json")!
 
 final class AppVersionManager {
@@ -22,24 +27,30 @@ final class AppVersionManager {
     
     private init() {}
     
-    func doesApplicationRequireUpdate(completionHandler: @escaping ((Bool?) -> Void)) {
+    func doesApplicationRequireUpdate(_ completion: @escaping ((Result<Bool, Error>) -> Void)) {
+        guard let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String else {
+            completion(.failure(AVMError.inaccessabileCurrentVerison))
+            return
+        }
         let session = URLSession(configuration: .default)
-        session.dataTask(with: latestReleaseURL) { data, response, error in
-            guard error == nil else {
-                completionHandler(nil)
-                return
+        
+        session.dataTask(with: latestReleaseURL) { data, _, error in
+            do {
+                if let error = error {
+                    throw error
+                }
+            
+                guard let data = data else {
+                    throw AVMError.noData
+                }
+                
+                let currentRelease = try JSONDecoder().decode(LatestVersionStruct.self, from: data)
+                self.cachedLatestVersion = currentRelease
+            
+                completion(.success(currentVersion < currentRelease.versionNumber))
+            } catch {
+                completion(.failure(error))
             }
-            
-            guard let data = data else {
-                completionHandler(nil)
-                return
-            }
-            let currentRelease = try! JSONDecoder().decode(LatestVersionStruct.self, from: data)
-            
-            self.cachedLatestVersion = currentRelease
-            
-            let currentVersion = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
-            completionHandler(currentVersion.compare(currentRelease.versionNumber) == .orderedAscending)
         }.resume()
     }
     

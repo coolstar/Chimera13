@@ -87,15 +87,19 @@ class ViewController: UIViewController, ElectraUI {
         let updateTapGestureRecogniser = UITapGestureRecognizer(target: self, action: #selector(shouldOpenUpdateLink))
         updateOdysseyView.addGestureRecognizer(updateTapGestureRecogniser)
         
-        AppVersionManager.shared.doesApplicationRequireUpdate { requiresUpdate in
-            guard let requiresUpdate = requiresUpdate,
-                  requiresUpdate else {
+        AppVersionManager.shared.doesApplicationRequireUpdate { result in
+            switch result {
+            case .failure(let error):
+                print(error)
                 return
-            }
             
-            DispatchQueue.main.async {
-                UIView.animate(withDuration: 0.5) {
-                    self.updateOdysseyView.isHidden = false
+            case .success(let updateRequired):
+                if (updateRequired) {
+                    DispatchQueue.main.async {
+                        UIView.animate(withDuration: 0.5) {
+                            self.updateOdysseyView.isHidden = false
+                        }
+                    }
                 }
             }
         }
@@ -139,17 +143,10 @@ class ViewController: UIViewController, ElectraUI {
         let host = mach_host_self()
         let ret = host_get_special_port(host, HOST_LOCAL_NODE, 4, &tfp0)
         mach_port_destroy(mach_task_self_, host)
-        if ret == KERN_SUCCESS && tfp0 != MACH_PORT_NULL {
-            return true
-        }
-        return false
-    }
-            
-    func showAlert(title: String, message: String, sync: Bool, callback: (() -> Void)?) {
-        self.showAlert(title: title, message: message, sync: sync, callback: callback, yesNo: false, noButtonText: nil)
+        return ret == KERN_SUCCESS && tfp0 != MACH_PORT_NULL
     }
     
-    func showAlert(title: String, message: String, sync: Bool, callback: (() -> Void)?, yesNo: Bool, noButtonText: String?) {
+    func showAlert(_ title: String, _ message: String, sync: Bool, callback: (() -> Void)? = nil, yesNo: Bool = false, noButtonText: String? = nil) {
         let sem = DispatchSemaphore(value: 0)
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -221,7 +218,7 @@ class ViewController: UIViewController, ElectraUI {
                     print("Testing log3", to: &outStream)
                     print("Testing stderr3", to: &errStream)
                     
-                    self.showAlert(title: "Test alert", message: "Testing an alert message", sync: true, callback: nil)
+                    self.showAlert("Test alert", "Testing an alert message", sync: true)
                     print("Alert done")
                     
                     return
@@ -242,7 +239,7 @@ class ViewController: UIViewController, ElectraUI {
                         tfp0 = tfpzero
                         let our_task = getOurTask()
                         any_proc = rk64(our_task + Offsets.shared.task.bsd_info)
-                    } else if #available(iOS 13, *){
+                    } else if #available(iOS 13, *) {
                         print("Selecting time_waste for iOS 13.0 -> 13.3")
                         get_tfp0()
                         tfp0 = tfpzero
@@ -269,7 +266,7 @@ class ViewController: UIViewController, ElectraUI {
                     } else {
                         self.progressRing.startProgress(to: 100, duration: 2)
                         
-                        self.showAlert(title: "Oh no", message: "\(String(describing: err))", sync: false, callback: {
+                        self.showAlert("Oh no", "\(String(describing: err))", sync: false, callback: {
                             UIApplication.shared.beginBackgroundTask {
                                 print("odd. this should never be called.")
                             }
@@ -332,7 +329,7 @@ class ViewController: UIViewController, ElectraUI {
     }
     
     @IBAction func themeInfo() {
-        self.showAlert(title: "Theme Copyright Info", message: ThemesManager.shared.currentTheme.copyrightString, sync: false, callback: nil)
+        self.showAlert("Theme Copyright Info", ThemesManager.shared.currentTheme.copyrightString, sync: false)
     }
 }
 
