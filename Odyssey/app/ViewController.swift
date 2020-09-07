@@ -51,7 +51,8 @@ class ViewController: UIViewController, ElectraUI {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        /* This will reset user defaults, used it a lot for testing
+        //This will reset user defaults, used it a lot for testing
+        /*
         if let bundleID = Bundle.main.bundleIdentifier {
             UserDefaults.standard.removePersistentDomain(forName: bundleID)
         }
@@ -141,7 +142,11 @@ class ViewController: UIViewController, ElectraUI {
             if (custom) {
                 if UserDefaults.standard.string(forKey: "theme") == "custom" {
                     if UserDefaults.standard.object(forKey: "customImage") == nil {
-                       self.themeImagePicker.present(from: self.view)
+                        let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                            self.themeImagePicker.present(from: self.view)
+                        }))
+                        self.present(alert, animated: true)
                     }
 
                     backgroundImage.image = bgImage
@@ -366,7 +371,15 @@ class ViewController: UIViewController, ElectraUI {
     }
     
     @IBAction func changeCustomImage(_ sender: UIButton) {
-        self.themeImagePicker.present(from: sender)
+        if UserDefaults.standard.object(forKey: "customImage") == nil {
+            let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.themeImagePicker.present(from: self.view)
+            }))
+            self.present(alert, animated: true)
+        } else {
+            self.themeImagePicker.present(from: sender)
+        }
     }
     
     @objc public func showAlderisPicker(_ notification: NSNotification) {
