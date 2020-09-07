@@ -61,5 +61,7 @@
 	</array>
 	<key>UIUserInterfaceStyle</key>
 	<string>Dark</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>For selecting a custom theme image</string>
 </dict>
 </plist>

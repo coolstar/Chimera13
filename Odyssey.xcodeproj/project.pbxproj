@@ -25,6 +25,44 @@
 		36C0994724A456390043250A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0993D24A456390043250A /* SceneDelegate.swift */; };
 		36C0994824A456390043250A /* SeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0993E24A456390043250A /* SeparatorView.swift */; };
 		36C0994924A456390043250A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C0993F24A456390043250A /* AppDelegate.swift */; };
+		5310399125041BB400CADF5C /* ThemeImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5310399025041BB400CADF5C /* ThemeImagePicker.swift */; };
+		5310399225041BB400CADF5C /* ThemeImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5310399025041BB400CADF5C /* ThemeImagePicker.swift */; };
+		531039962504F59800CADF5C /* AlderisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531039952504F59800CADF5C /* AlderisButton.swift */; };
+		531039972504F59800CADF5C /* AlderisButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 531039952504F59800CADF5C /* AlderisButton.swift */; };
+		53E564152506A8F400C4591F /* ColorPickerInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564012506A8F400C4591F /* ColorPickerInnerViewController.swift */; };
+		53E564162506A8F400C4591F /* ColorPickerInnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564012506A8F400C4591F /* ColorPickerInnerViewController.swift */; };
+		53E564172506A8F400C4591F /* ColorPickerWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564032506A8F400C4591F /* ColorPickerWheelView.swift */; };
+		53E564182506A8F400C4591F /* ColorPickerWheelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564032506A8F400C4591F /* ColorPickerWheelView.swift */; };
+		53E564192506A8F400C4591F /* ColorPickerSlidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564042506A8F400C4591F /* ColorPickerSlidersViewController.swift */; };
+		53E5641A2506A8F400C4591F /* ColorPickerSlidersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564042506A8F400C4591F /* ColorPickerSlidersViewController.swift */; };
+		53E5641B2506A8F400C4591F /* ColorPickerSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564052506A8F400C4591F /* ColorPickerSeparatorView.swift */; };
+		53E5641C2506A8F400C4591F /* ColorPickerSeparatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564052506A8F400C4591F /* ColorPickerSeparatorView.swift */; };
+		53E5641D2506A8F400C4591F /* ColorPickerSwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564072506A8F400C4591F /* ColorPickerSwatchViewController.swift */; };
+		53E5641E2506A8F400C4591F /* ColorPickerSwatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564072506A8F400C4591F /* ColorPickerSwatchViewController.swift */; };
+		53E564212506A8F400C4591F /* ColorPickerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564092506A8F400C4591F /* ColorPickerSlider.swift */; };
+		53E564222506A8F400C4591F /* ColorPickerSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564092506A8F400C4591F /* ColorPickerSlider.swift */; };
+		53E564232506A8F400C4591F /* LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640A2506A8F400C4591F /* LayoutGuide.swift */; };
+		53E564242506A8F400C4591F /* LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640A2506A8F400C4591F /* LayoutGuide.swift */; };
+		53E564252506A8F400C4591F /* UIColor+HBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640B2506A8F400C4591F /* UIColor+HBAdditions.m */; };
+		53E564262506A8F400C4591F /* UIColor+HBAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640B2506A8F400C4591F /* UIColor+HBAdditions.m */; };
+		53E564272506A8F400C4591F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640C2506A8F400C4591F /* ColorPickerViewController.swift */; };
+		53E564282506A8F400C4591F /* ColorPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640C2506A8F400C4591F /* ColorPickerViewController.swift */; };
+		53E564292506A8F400C4591F /* ColorPickerMapSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640D2506A8F400C4591F /* ColorPickerMapSlider.swift */; };
+		53E5642A2506A8F400C4591F /* ColorPickerMapSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640D2506A8F400C4591F /* ColorPickerMapSlider.swift */; };
+		53E5642B2506A8F400C4591F /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640E2506A8F400C4591F /* ColorPickerDelegate.swift */; };
+		53E5642C2506A8F400C4591F /* ColorPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640E2506A8F400C4591F /* ColorPickerDelegate.swift */; };
+		53E5642D2506A8F400C4591F /* ColorPickerNumericSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640F2506A8F400C4591F /* ColorPickerNumericSlider.swift */; };
+		53E5642E2506A8F400C4591F /* ColorPickerNumericSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E5640F2506A8F400C4591F /* ColorPickerNumericSlider.swift */; };
+		53E5642F2506A8F400C4591F /* ColorPickerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564102506A8F400C4591F /* ColorPickerCircleView.swift */; };
+		53E564302506A8F400C4591F /* ColorPickerCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564102506A8F400C4591F /* ColorPickerCircleView.swift */; };
+		53E564312506A8F400C4591F /* ColorPickerTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564112506A8F400C4591F /* ColorPickerTabViewController.swift */; };
+		53E564322506A8F400C4591F /* ColorPickerTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564112506A8F400C4591F /* ColorPickerTabViewController.swift */; };
+		53E564332506A8F400C4591F /* ColorPickerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564122506A8F400C4591F /* ColorPickerMapViewController.swift */; };
+		53E564342506A8F400C4591F /* ColorPickerMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564122506A8F400C4591F /* ColorPickerMapViewController.swift */; };
+		53E564352506A8F400C4591F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564132506A8F400C4591F /* Color.swift */; };
+		53E564362506A8F400C4591F /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564132506A8F400C4591F /* Color.swift */; };
+		53E5643A2506F18500C4591F /* ColourViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564392506F18500C4591F /* ColourViewer.swift */; };
+		53E5643B2506F18500C4591F /* ColourViewer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53E564392506F18500C4591F /* ColourViewer.swift */; };
 		933AA7C324E9D34F006182FC /* AppVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933AA7C224E9D34F006182FC /* AppVersionManager.swift */; };
 		933AA7C424E9D34F006182FC /* AppVersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 933AA7C224E9D34F006182FC /* AppVersionManager.swift */; };
 		F10593C124B1D98C00343F46 /* TableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F10593C024B1D98C00343F46 /* TableButton.swift */; };
@@ -184,16 +222,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		3673C23A246E5BFD00F00A82 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		F170604A24CD53CD001596A0 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -228,6 +256,27 @@
 		36C0993D24A456390043250A /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		36C0993E24A456390043250A /* SeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeparatorView.swift; sourceTree = "<group>"; };
 		36C0993F24A456390043250A /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5310399025041BB400CADF5C /* ThemeImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeImagePicker.swift; sourceTree = "<group>"; };
+		531039952504F59800CADF5C /* AlderisButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlderisButton.swift; sourceTree = "<group>"; };
+		53E564012506A8F400C4591F /* ColorPickerInnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerInnerViewController.swift; sourceTree = "<group>"; };
+		53E564022506A8F400C4591F /* Alderis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Alderis.h; sourceTree = "<group>"; };
+		53E564032506A8F400C4591F /* ColorPickerWheelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerWheelView.swift; sourceTree = "<group>"; };
+		53E564042506A8F400C4591F /* ColorPickerSlidersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerSlidersViewController.swift; sourceTree = "<group>"; };
+		53E564052506A8F400C4591F /* ColorPickerSeparatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerSeparatorView.swift; sourceTree = "<group>"; };
+		53E564062506A8F400C4591F /* UIColor+HBAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HBAdditions.h"; sourceTree = "<group>"; };
+		53E564072506A8F400C4591F /* ColorPickerSwatchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerSwatchViewController.swift; sourceTree = "<group>"; };
+		53E564092506A8F400C4591F /* ColorPickerSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerSlider.swift; sourceTree = "<group>"; };
+		53E5640A2506A8F400C4591F /* LayoutGuide.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LayoutGuide.swift; sourceTree = "<group>"; };
+		53E5640B2506A8F400C4591F /* UIColor+HBAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HBAdditions.m"; sourceTree = "<group>"; };
+		53E5640C2506A8F400C4591F /* ColorPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewController.swift; sourceTree = "<group>"; };
+		53E5640D2506A8F400C4591F /* ColorPickerMapSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerMapSlider.swift; sourceTree = "<group>"; };
+		53E5640E2506A8F400C4591F /* ColorPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerDelegate.swift; sourceTree = "<group>"; };
+		53E5640F2506A8F400C4591F /* ColorPickerNumericSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerNumericSlider.swift; sourceTree = "<group>"; };
+		53E564102506A8F400C4591F /* ColorPickerCircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerCircleView.swift; sourceTree = "<group>"; };
+		53E564112506A8F400C4591F /* ColorPickerTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerTabViewController.swift; sourceTree = "<group>"; };
+		53E564122506A8F400C4591F /* ColorPickerMapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerMapViewController.swift; sourceTree = "<group>"; };
+		53E564132506A8F400C4591F /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		53E564392506F18500C4591F /* ColourViewer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColourViewer.swift; sourceTree = "<group>"; };
 		933AA7C224E9D34F006182FC /* AppVersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppVersionManager.swift; sourceTree = "<group>"; };
 		F10593C024B1D98C00343F46 /* TableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableButton.swift; sourceTree = "<group>"; };
 		F10593C224B29DAC00343F46 /* AvatarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarView.swift; sourceTree = "<group>"; };
@@ -352,7 +401,32 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		3673C237246E5BFD00F00A82 /* Frameworks */ = {
+		53E564002506A8F400C4591F /* Alderis */ = {
+			isa = PBXGroup;
+			children = (
+				53E564012506A8F400C4591F /* ColorPickerInnerViewController.swift */,
+				53E564022506A8F400C4591F /* Alderis.h */,
+				53E564032506A8F400C4591F /* ColorPickerWheelView.swift */,
+				53E564042506A8F400C4591F /* ColorPickerSlidersViewController.swift */,
+				53E564052506A8F400C4591F /* ColorPickerSeparatorView.swift */,
+				53E564062506A8F400C4591F /* UIColor+HBAdditions.h */,
+				53E564072506A8F400C4591F /* ColorPickerSwatchViewController.swift */,
+				53E564092506A8F400C4591F /* ColorPickerSlider.swift */,
+				53E5640A2506A8F400C4591F /* LayoutGuide.swift */,
+				53E5640B2506A8F400C4591F /* UIColor+HBAdditions.m */,
+				53E5640C2506A8F400C4591F /* ColorPickerViewController.swift */,
+				53E5640D2506A8F400C4591F /* ColorPickerMapSlider.swift */,
+				53E5640E2506A8F400C4591F /* ColorPickerDelegate.swift */,
+				53E5640F2506A8F400C4591F /* ColorPickerNumericSlider.swift */,
+				53E564102506A8F400C4591F /* ColorPickerCircleView.swift */,
+				53E564112506A8F400C4591F /* ColorPickerTabViewController.swift */,
+				53E564122506A8F400C4591F /* ColorPickerMapViewController.swift */,
+				53E564132506A8F400C4591F /* Color.swift */,
+			);
+			path = Alderis;
+			sourceTree = "<group>";
+		};
+		6D30127FB6823AE81A8072E1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -371,6 +445,8 @@
 				F11EFF2224BA6CDD005152A8 /* ToggleView.swift */,
 				36C0993E24A456390043250A /* SeparatorView.swift */,
 				F10593D324B2FA4500343F46 /* SelectionButton.swift */,
+				531039952504F59800CADF5C /* AlderisButton.swift */,
+				53E564392506F18500C4591F /* ColourViewer.swift */,
 				F10593CB24B2DB8D00343F46 /* Credits */,
 			);
 			path = Panels;
@@ -391,7 +467,7 @@
 				3653E04F246E2C5800821ADA /* Deps */,
 				F1243085240BB358006439CC /* Odyssey */,
 				F1243084240BB358006439CC /* Products */,
-				3673C237246E5BFD00F00A82 /* Frameworks */,
+				6D30127FB6823AE81A8072E1 /* Frameworks */,
 			);
 			indentWidth = 4;
 			sourceTree = "<group>";
@@ -410,6 +486,7 @@
 		F1243085240BB358006439CC /* Odyssey */ = {
 			isa = PBXGroup;
 			children = (
+				53E564002506A8F400C4591F /* Alderis */,
 				F191A9C024330DCD005E0F8F /* resources */,
 				F124309C240BB71D006439CC /* post-exploit */,
 				F124309B240BB717006439CC /* exploit */,
@@ -533,6 +610,7 @@
 				F1D35AF624B311180005400A /* Theme.swift */,
 				F1D35AF424B3106C0005400A /* ThemesManager.swift */,
 				F1D35AF824B331630005400A /* ImageProcess.swift */,
+				5310399025041BB400CADF5C /* ThemeImagePicker.swift */,
 			);
 			path = ThemesManager;
 			sourceTree = "<group>";
@@ -547,8 +625,7 @@
 				F124307F240BB358006439CC /* Sources */,
 				F1243080240BB358006439CC /* Frameworks */,
 				F1243081240BB358006439CC /* Resources */,
-				F1D6962124317FEA006D5F7C /* ShellScript */,
-				3673C23A246E5BFD00F00A82 /* Embed Frameworks */,
+				53E5643C2506F7D800C4591F /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -704,7 +781,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		F170604924CD53CD001596A0 /* ShellScript */ = {
+		53E5643C2506F7D800C4591F /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -719,9 +796,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which swiftlint >/dev/null; then\nswiftlint || true\nelse\necho \"warning: SwiftLint not installed, run `brew install swiftlint`\"\nfi\n";
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
-		F1D6962124317FEA006D5F7C /* ShellScript */ = {
+		F170604924CD53CD001596A0 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -745,6 +822,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E5642B2506A8F400C4591F /* ColorPickerDelegate.swift in Sources */,
+				53E5641D2506A8F400C4591F /* ColorPickerSwatchViewController.swift in Sources */,
 				F1D35AFD24B409230005400A /* TextButton.swift in Sources */,
 				F1A2B43224B41AEA0087D978 /* NonceManager.swift in Sources */,
 				F13C16322436979D00194BF3 /* sethsp4.swift in Sources */,
@@ -753,8 +832,11 @@
 				F12430E5240BC986006439CC /* offsets.swift in Sources */,
 				F1C8FE9024F9DE04008A551E /* offsets.m in Sources */,
 				36C0994324A456390043250A /* BackgroundView.swift in Sources */,
+				53E5641B2506A8F400C4591F /* ColorPickerSeparatorView.swift in Sources */,
+				53E564272506A8F400C4591F /* ColorPickerViewController.swift in Sources */,
 				F13C16402438400C00194BF3 /* swiftUtil.swift in Sources */,
 				F1EC83E02413416D00D81445 /* cutils.c in Sources */,
+				53E5642D2506A8F400C4591F /* ColorPickerNumericSlider.swift in Sources */,
 				36C0994524A456390043250A /* ViewController.swift in Sources */,
 				36C0994924A456390043250A /* AppDelegate.swift in Sources */,
 				360512E124B10E5700DFD3AF /* UICircularRingLayer.swift in Sources */,
@@ -770,10 +852,14 @@
 				F1C8FE9124F9DE04008A551E /* exploit_utilities.c in Sources */,
 				360512E024B10E5700DFD3AF /* UICircularRing.swift in Sources */,
 				F1A2B43624B430760087D978 /* PanelView.swift in Sources */,
+				53E564252506A8F400C4591F /* UIColor+HBAdditions.m in Sources */,
 				F191A9BD2432A948005E0F8F /* amfidtakeover.swift in Sources */,
+				5310399125041BB400CADF5C /* ThemeImagePicker.swift in Sources */,
 				360512E224B10E5700DFD3AF /* UICircularRingStyle.swift in Sources */,
 				933AA7C324E9D34F006182FC /* AppVersionManager.swift in Sources */,
 				F12430E7240BDC00006439CC /* remount.swift in Sources */,
+				53E564332506A8F400C4591F /* ColorPickerMapViewController.swift in Sources */,
+				53E564172506A8F400C4591F /* ColorPickerWheelView.swift in Sources */,
 				360512E524B10E5700DFD3AF /* UICircularProgressRingDelegate.swift in Sources */,
 				360512E324B10E5700DFD3AF /* UICircularTimerRing.swift in Sources */,
 				360512E424B10E5700DFD3AF /* Extensions.swift in Sources */,
@@ -782,23 +868,33 @@
 				F10593C124B1D98C00343F46 /* TableButton.swift in Sources */,
 				F10593C524B2A49500343F46 /* CreditsButton.swift in Sources */,
 				F10593D424B2FA4500343F46 /* SelectionButton.swift in Sources */,
+				53E5642F2506A8F400C4591F /* ColorPickerCircleView.swift in Sources */,
+				53E564352506A8F400C4591F /* Color.swift in Sources */,
 				36C0994424A456390043250A /* AnimatingColourView.swift in Sources */,
 				F1FF240824AC97E500ACAE23 /* LogViewController.swift in Sources */,
 				F10593C324B29DAC00343F46 /* AvatarView.swift in Sources */,
 				36C0994824A456390043250A /* SeparatorView.swift in Sources */,
 				360512E624B10E5700DFD3AF /* UICircularProgressRing.swift in Sources */,
 				F14A7A9024A6FB3500215A6F /* kmem.c in Sources */,
+				531039962504F59800CADF5C /* AlderisButton.swift in Sources */,
 				F125E0532469E59F0023161C /* patchfinder64.c in Sources */,
 				F1D35AF924B331630005400A /* ImageProcess.swift in Sources */,
+				53E564212506A8F400C4591F /* ColorPickerSlider.swift in Sources */,
+				53E564312506A8F400C4591F /* ColorPickerTabViewController.swift in Sources */,
+				53E564192506A8F400C4591F /* ColorPickerSlidersViewController.swift in Sources */,
 				F1C8FE9324F9DE04008A551E /* kernel_memory.c in Sources */,
 				F11EFF2324BA6CDD005152A8 /* ToggleView.swift in Sources */,
 				F12430DA240BC199006439CC /* electra.swift in Sources */,
+				53E564232506A8F400C4591F /* LayoutGuide.swift in Sources */,
 				F1C72279246BE180003160B5 /* bootstrap.swift in Sources */,
 				F1D35AF724B311180005400A /* Theme.swift in Sources */,
 				36C0994724A456390043250A /* SceneDelegate.swift in Sources */,
 				F1FF240A24AD3FC200ACAE23 /* ObjcTryCatch.m in Sources */,
 				F1FF240124AC946C00ACAE23 /* LogStream.swift in Sources */,
+				53E564292506A8F400C4591F /* ColorPickerMapSlider.swift in Sources */,
+				53E5643A2506F18500C4591F /* ColourViewer.swift in Sources */,
 				1B308DD124F9BD2D008095E4 /* Reachability.swift in Sources */,
+				53E564152506A8F400C4591F /* ColorPickerInnerViewController.swift in Sources */,
 				F14A7A8C24A6F9CA00215A6F /* tardy0n.cc in Sources */,
 				F1C8FE9424F9DE04008A551E /* exploit.c in Sources */,
 			);
@@ -808,14 +904,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53E5642C2506A8F400C4591F /* ColorPickerDelegate.swift in Sources */,
 				F1C8FE7824F9D3CF008A551E /* Reachability.swift in Sources */,
+				53E564322506A8F400C4591F /* ColorPickerTabViewController.swift in Sources */,
 				F170605924CD560C001596A0 /* offsets.swift in Sources */,
+				53E5641E2506A8F400C4591F /* ColorPickerSwatchViewController.swift in Sources */,
+				53E5642E2506A8F400C4591F /* ColorPickerNumericSlider.swift in Sources */,
 				F170605824CD551C001596A0 /* ImageProcess.swift in Sources */,
 				F170600C24CD53CD001596A0 /* TextButton.swift in Sources */,
 				F170600D24CD53CD001596A0 /* NonceManager.swift in Sources */,
 				F170600F24CD53CD001596A0 /* UICircularRingValueFormatter.swift in Sources */,
 				F170601224CD53CD001596A0 /* BackgroundView.swift in Sources */,
+				53E564342506A8F400C4591F /* ColorPickerMapViewController.swift in Sources */,
+				5310399225041BB400CADF5C /* ThemeImagePicker.swift in Sources */,
+				53E564362506A8F400C4591F /* Color.swift in Sources */,
 				F170601324CD53CD001596A0 /* swiftUtil.swift in Sources */,
+				53E564242506A8F400C4591F /* LayoutGuide.swift in Sources */,
 				F170601524CD53CD001596A0 /* ViewController.swift in Sources */,
 				F170601624CD53CD001596A0 /* AppDelegate.swift in Sources */,
 				F170601724CD53CD001596A0 /* UICircularRingLayer.swift in Sources */,
@@ -831,17 +935,28 @@
 				F170602724CD53CD001596A0 /* PanelStackView.swift in Sources */,
 				F170602824CD53CD001596A0 /* PanelButton.swift in Sources */,
 				F170605724CD54D5001596A0 /* electra-dummy.swift in Sources */,
+				53E564262506A8F400C4591F /* UIColor+HBAdditions.m in Sources */,
 				F170602924CD53CD001596A0 /* TableButton.swift in Sources */,
 				F170602A24CD53CD001596A0 /* CreditsButton.swift in Sources */,
+				53E564182506A8F400C4591F /* ColorPickerWheelView.swift in Sources */,
 				F170602B24CD53CD001596A0 /* SelectionButton.swift in Sources */,
 				F170602C24CD53CD001596A0 /* AnimatingColourView.swift in Sources */,
 				F170602D24CD53CD001596A0 /* LogViewController.swift in Sources */,
 				F170602E24CD53CD001596A0 /* AvatarView.swift in Sources */,
+				53E5641A2506A8F400C4591F /* ColorPickerSlidersViewController.swift in Sources */,
 				F170602F24CD53CD001596A0 /* SeparatorView.swift in Sources */,
+				53E5641C2506A8F400C4591F /* ColorPickerSeparatorView.swift in Sources */,
+				53E564162506A8F400C4591F /* ColorPickerInnerViewController.swift in Sources */,
+				53E564282506A8F400C4591F /* ColorPickerViewController.swift in Sources */,
+				531039972504F59800CADF5C /* AlderisButton.swift in Sources */,
+				53E564222506A8F400C4591F /* ColorPickerSlider.swift in Sources */,
 				F170603024CD53CD001596A0 /* UICircularProgressRing.swift in Sources */,
+				53E564302506A8F400C4591F /* ColorPickerCircleView.swift in Sources */,
 				F170603424CD53CD001596A0 /* ToggleView.swift in Sources */,
 				F170603724CD53CD001596A0 /* Theme.swift in Sources */,
 				933AA7C424E9D34F006182FC /* AppVersionManager.swift in Sources */,
+				53E5643B2506F18500C4591F /* ColourViewer.swift in Sources */,
+				53E5642A2506A8F400C4591F /* ColorPickerMapSlider.swift in Sources */,
 				F170603824CD53CD001596A0 /* SceneDelegate.swift in Sources */,
 				F170603924CD53CD001596A0 /* ObjcTryCatch.m in Sources */,
 				F170603A24CD53CD001596A0 /* LogStream.swift in Sources */,
@@ -983,8 +1098,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TCM49M8P5K;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Odyssey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -999,6 +1115,7 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.odyssey;
 				PRODUCT_NAME = Odyssey;
@@ -1016,8 +1133,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = TCM49M8P5K;
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = Odyssey/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1032,6 +1150,7 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.odyssey;
 				PRODUCT_NAME = Odyssey;
@@ -1064,6 +1183,7 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.odyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1097,6 +1217,7 @@
 				OTHER_LDFLAGS = (
 					"-framework",
 					IOKit,
+					"$(inherited)",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = org.coolstar.odyssey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
