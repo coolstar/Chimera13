@@ -101,6 +101,3 @@ SwiftZSTD.framework
 Payload
 *.o
 amfidebilitate/bin/amfidebilitate
-
-# Ignore Cocoapods, install them yourself
-Pods
