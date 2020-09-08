@@ -128,29 +128,29 @@ class ViewController: UIViewController, ElectraUI {
     }
     
     @objc func updateTheme() {
-        var custom = false
-        
-        if (UserDefaults.standard.string(forKey: "theme") == "custom" || UserDefaults.standard.string(forKey: "theme") == "customColourTheme") {
-            custom = true
-        }
-        
+        let custom = UserDefaults.standard.string(forKey: "theme") == "custom"
+        let customColour = UserDefaults.standard.string(forKey: "theme") == "customColourTheme"
+
         var bgImage: UIImage?
         
-        if (custom) { bgImage = ThemesManager.shared.customImage } else { bgImage = ThemesManager.shared.currentTheme.backgroundImage }
+        if custom {
+            if UserDefaults.standard.object(forKey: "customImage") == nil {
+                let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.themeImagePicker.present(from: self.view)
+                }))
+                self.present(alert, animated: true)
+                return
+            } else {
+                bgImage = ThemesManager.shared.customImage
+            }
+        } else {
+            bgImage = ThemesManager.shared.currentTheme.backgroundImage
+        }
         
         if let bgImage = bgImage {
-            if (custom) {
-                if UserDefaults.standard.string(forKey: "theme") == "custom" {
-                    if UserDefaults.standard.object(forKey: "customImage") == nil {
-                        let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
-                        alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                            self.themeImagePicker.present(from: self.view)
-                        }))
-                        self.present(alert, animated: true)
-                    }
-
-                    backgroundImage.image = bgImage
-                }
+            if custom {
+                backgroundImage.image = bgImage
             } else {
                 let aspectHeight = self.view.bounds.height
                 let aspectWidth = self.view.bounds.width
@@ -167,7 +167,7 @@ class ViewController: UIViewController, ElectraUI {
             backgroundImage.image = nil
         }
         
-        if (custom) { vibrancyView.isHidden = !ThemesManager.shared.customThemeBlur } else { vibrancyView.isHidden = !ThemesManager.shared.currentTheme.enableBlur }
+        if (custom || customColour) { vibrancyView.isHidden = !ThemesManager.shared.customThemeBlur } else { vibrancyView.isHidden = !ThemesManager.shared.currentTheme.enableBlur }
         
         backgroundOverlay.backgroundColor = ThemesManager.shared.currentTheme.backgroundOverlay ?? UIColor.clear
         themeCopyrightButton.isHidden = ThemesManager.shared.currentTheme.copyrightString.isEmpty
