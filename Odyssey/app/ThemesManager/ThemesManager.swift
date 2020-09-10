@@ -12,7 +12,7 @@ class ThemesManager {
     static let shared = ThemesManager()
     static let themeChangeNotification = NSNotification.Name("ThemeChangeNotification")
     
-    private let themes: [String: Theme] = [
+    private var themes: [String: Theme] = [
         "default": Theme(colorViewBackgrounds: [
             .init(baseColour: .black, linearGradients: [
                 .init(colours: [UIColor(red: 210/255, green: 135/255, blue: 244/255, alpha: 1), UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)], angle: 47)
@@ -90,12 +90,74 @@ class ThemesManager {
             backgroundImage: UIImage(named: "Sierra"),
             backgroundCenter: CGPoint(x: 1440, y: 900),
             backgroundOverlay: UIColor(white: 0, alpha: 0.1),
-            enableBlur: true)
+            enableBlur: true),
+        
+        "custom": Theme(
+            colorViewBackgrounds: [
+                .init(baseColour: .black, linearGradients: [
+                    .init(colours: [.black], angle: 0)
+                ], overlayImage: nil)
+            ],
+            
+            backgroundImage: nil,
+            backgroundCenter: CGPoint(x: 0, y: 0),
+            backgroundOverlay: UIColor(white: 0, alpha: 0),
+            enableBlur: false),
+        
+        "customColourTheme": Theme(colorViewBackgrounds: [
+            .init(baseColour: .black, linearGradients: [
+                .init(colours: [UIColor(red: 210/255, green: 135/255, blue: 244/255, alpha: 1), UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)], angle: 47)
+            ], overlayImage: nil)
+        ], backgroundImage: nil, backgroundOverlay: nil, enableBlur: false)
     ]
     
     public var currentTheme: Theme {
         let currentThemeName = UserDefaults.standard.string(forKey: "theme") ?? "default"
         return themes[currentThemeName] ?? themes["default"]!
+    }
+    
+
+    public var customImage: UIImage {
+        if let imgData = UserDefaults.standard.object(forKey: "customImage") as? NSData {
+            if let image = UIImage(data: imgData as Data) {
+                return image
+            }
+        }
+        
+        return UIImage()
+    }
+    
+    public var customThemeBlur: Bool {
+        if UserDefaults.standard.string(forKey: "theme") == "custom" {
+            if UserDefaults.standard.object(forKey: "customThemeBlur") != nil {
+                return UserDefaults.standard.bool(forKey: "customThemeBlur")
+            } else {
+                return true
+            }
+        } else if UserDefaults.standard.string(forKey: "theme") == "customColourTheme" {
+            if UserDefaults.standard.object(forKey: "customColourThemeBlur") != nil {
+                return UserDefaults.standard.bool(forKey: "customColourThemeBlur")
+            } else {
+                return true
+            }
+        } else {
+            return true
+        }
+    }
+    
+    public var customColourBackground: [AnimatingColourView.GradientBackground] {
+        var baseColour: UIColor
+        var gradientColour1: UIColor
+        var gradientColour2: UIColor
+        
+        baseColour = UserDefaults.standard.color(forKey: "customBaseColour") ?? .black
+        gradientColour1 = UserDefaults.standard.color(forKey: "customColourOne") ?? UIColor(red: 210/255, green: 135/255, blue: 244/255, alpha: 1)
+        gradientColour2 = UserDefaults.standard.color(forKey: "customColourTwo") ?? UIColor(red: 247/255, green: 107/255, blue: 28/255, alpha: 1)
+        
+        
+        return [.init(baseColour: baseColour, linearGradients: [
+            .init(colours: [gradientColour1, gradientColour2], angle: 47)
+        ], overlayImage: nil)]
     }
     
     init() {

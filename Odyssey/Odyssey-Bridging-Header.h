@@ -14,6 +14,8 @@
 #import "helpers.h"
 #import <xpc/xpc.h>
 
+#import "Alderis.h"
+
 int csops(pid_t pid, uint32_t op, uint32_t *addr, uint32_t opt);
 
 void ObjcTryCatch(void (^tryBlock)(void));

@@ -53,8 +53,7 @@ class TextButton: TableButton, UITextFieldDelegate {
             self.textField.alpha = 1
             
             self.textField.becomeFirstResponder()
-        }
-    }
+        }  }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         self.viewController.resetPopTimer()

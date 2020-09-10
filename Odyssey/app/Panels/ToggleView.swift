@@ -11,6 +11,8 @@ import UIKit
 class ToggleView: UIView {
     @IBOutlet weak private var toggle: UISwitch!
     @IBInspectable private var prefsName: String!
+    @IBInspectable private var sendNotification: Bool = false
+    @IBInspectable private var notifcationName: String!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +28,11 @@ class ToggleView: UIView {
     @IBAction func valueChanged() {
         if !prefsName.isEmpty {
             UserDefaults.standard.set(toggle.isOn, forKey: prefsName)
+        }
+        
+        if (sendNotification) {
+            let notification = Notification(name: Notification.Name(notifcationName))
+            NotificationCenter.default.post(notification)
         }
     }
 }
