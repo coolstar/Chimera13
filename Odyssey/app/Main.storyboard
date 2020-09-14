@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="veQ-yo-6fF">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -100,7 +100,7 @@
                                                 </view>
                                                 <blurEffect style="light"/>
                                             </visualEffectView>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc5-wg-Z0Q">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" directionalLockEnabled="YES" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc5-wg-Z0Q">
                                                 <rect key="frame" x="0.0" y="0.0" width="245" height="179"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="EyR-U5-s70">
@@ -1196,7 +1196,7 @@
                                                                 <viewLayoutGuide key="contentLayoutGuide" id="W3T-Kd-THS"/>
                                                                 <viewLayoutGuide key="frameLayoutGuide" id="taW-Vu-Rbd"/>
                                                                 <connections>
-                                                                    <outlet property="parentView" destination="BEp-qY-zvI" id="6i5-IU-jkI"/>
+                                                                    <outlet property="parentView" destination="Msx-m2-k21" id="LeS-Jy-SkH"/>
                                                                     <outlet property="viewController" destination="BYZ-38-t0r" id="N6K-be-MsA"/>
                                                                 </connections>
                                                             </scrollView>
@@ -1377,7 +1377,7 @@
                                                                 <viewLayoutGuide key="contentLayoutGuide" id="gT1-jb-mVc"/>
                                                                 <viewLayoutGuide key="frameLayoutGuide" id="uFu-lA-Ca3"/>
                                                                 <connections>
-                                                                    <outlet property="parentView" destination="BEp-qY-zvI" id="fvR-Ry-DGh"/>
+                                                                    <outlet property="parentView" destination="Msx-m2-k21" id="KBq-hL-WZL"/>
                                                                     <outlet property="viewController" destination="BYZ-38-t0r" id="lWW-SL-4TN"/>
                                                                 </connections>
                                                             </scrollView>
