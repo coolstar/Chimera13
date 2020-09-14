@@ -45,8 +45,8 @@ public extension Notification.Name {
 
 public class Reachability {
 
-    public typealias NetworkReachable = (Reachability) -> ()
-    public typealias NetworkUnreachable = (Reachability) -> ()
+    public typealias NetworkReachable = (Reachability) -> Void
+    public typealias NetworkUnreachable = (Reachability) -> Void
 
     @available(*, unavailable, renamed: "Connection")
     public enum NetworkStatus: CustomStringConvertible {
@@ -88,12 +88,12 @@ public class Reachability {
 
     @available(*, deprecated, renamed: "connection.description")
     public var currentReachabilityString: String {
-        return "\(connection)"
+        "\(connection)"
     }
 
     @available(*, unavailable, renamed: "connection")
     public var currentReachabilityStatus: Connection {
-        return connection
+        connection
     }
 
     public var connection: Connection {
@@ -173,7 +173,7 @@ public extension Reachability {
     func startNotifier() throws {
         guard !notifierRunning else { return }
 
-        let callback: SCNetworkReachabilityCallBack = { (reachability, flags, info) in
+        let callback: SCNetworkReachabilityCallBack = { reachability, flags, info in
             guard let info = info else { return }
 
             // `weakifiedReachability` is guaranteed to exist by virtue of our
@@ -234,7 +234,7 @@ public extension Reachability {
     // MARK: - *** Connection test methods ***
     @available(*, deprecated, message: "Please use `connection != .none`")
     var isReachable: Bool {
-        return connection != .unavailable
+        connection != .unavailable
     }
 
     @available(*, deprecated, message: "Please use `connection == .cellular`")
@@ -245,11 +245,11 @@ public extension Reachability {
 
    @available(*, deprecated, message: "Please use `connection == .wifi`")
     var isReachableViaWiFi: Bool {
-        return connection == .wifi
+        connection == .wifi
     }
 
     var description: String {
-        return flags?.description ?? "unavailable flags"
+        flags?.description ?? "unavailable flags"
     }
 }
 
@@ -266,7 +266,6 @@ fileprivate extension Reachability {
             self.flags = flags
         }
     }
-    
 
     func notifyReachabilityChanged() {
         let notify = { [weak self] in
@@ -319,34 +318,34 @@ extension SCNetworkReachabilityFlags {
         #endif
     }
     var isReachableFlagSet: Bool {
-        return contains(.reachable)
+        contains(.reachable)
     }
     var isConnectionRequiredFlagSet: Bool {
-        return contains(.connectionRequired)
+        contains(.connectionRequired)
     }
     var isInterventionRequiredFlagSet: Bool {
-        return contains(.interventionRequired)
+        contains(.interventionRequired)
     }
     var isConnectionOnTrafficFlagSet: Bool {
-        return contains(.connectionOnTraffic)
+        contains(.connectionOnTraffic)
     }
     var isConnectionOnDemandFlagSet: Bool {
-        return contains(.connectionOnDemand)
+        contains(.connectionOnDemand)
     }
     var isConnectionOnTrafficOrDemandFlagSet: Bool {
-        return !intersection([.connectionOnTraffic, .connectionOnDemand]).isEmpty
+        !intersection([.connectionOnTraffic, .connectionOnDemand]).isEmpty
     }
     var isTransientConnectionFlagSet: Bool {
-        return contains(.transientConnection)
+        contains(.transientConnection)
     }
     var isLocalAddressFlagSet: Bool {
-        return contains(.isLocalAddress)
+        contains(.isLocalAddress)
     }
     var isDirectFlagSet: Bool {
-        return contains(.isDirect)
+        contains(.isDirect)
     }
     var isConnectionRequiredAndTransientFlagSet: Bool {
-        return intersection([.connectionRequired, .transientConnection]) == [.connectionRequired, .transientConnection]
+        intersection([.connectionRequired, .transientConnection]) == [.connectionRequired, .transientConnection]
     }
 
     var description: String {
