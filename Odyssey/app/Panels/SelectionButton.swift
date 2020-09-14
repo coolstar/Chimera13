@@ -51,6 +51,7 @@ class SelectionButton: TableButton {
         guard !notificationName.isEmpty else {
             return
         }
+        
         let notification = Notification(name: Notification.Name(notificationName))
         NotificationCenter.default.post(notification)
     }

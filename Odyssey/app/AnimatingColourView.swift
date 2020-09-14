@@ -20,6 +20,14 @@ class AnimatingColourView: UIView {
         let overlayImage: UIImage?
     }
     
+    private var backgroundsToUse: [AnimatingColourView.GradientBackground] {
+        if UserDefaults.standard.string(forKey: "theme") == "customColourTheme" {
+            return ThemesManager.shared.customColourBackground
+        } else {
+            return ThemesManager.shared.currentTheme.colorViewBackgrounds
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -27,7 +35,7 @@ class AnimatingColourView: UIView {
         gradientViewContainer.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         addSubview(gradientViewContainer)
         
-        let backgrounds = ThemesManager.shared.currentTheme.colorViewBackgrounds
+        let backgrounds = backgroundsToUse
         setup(for: backgrounds[0])
         Timer.scheduledTimer(timeInterval: 10, target: self, selector: #selector(tick), userInfo: nil, repeats: true)
         
@@ -42,7 +50,7 @@ class AnimatingColourView: UIView {
         UIView.transition(
             with: self, duration: 4, options: .transitionCrossDissolve,
             animations: { [unowned self] in
-                let backgrounds = ThemesManager.shared.currentTheme.colorViewBackgrounds
+                let backgrounds = self.backgroundsToUse
                 self.setup(for: backgrounds.randomElement())
             }
         )

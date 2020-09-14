@@ -10,9 +10,10 @@ import UIKit
 import MachO.dyld_images
 
 class ViewController: UIViewController, ElectraUI {
+
     var electra: Electra?
     var allProc = UInt64(0)
-    
+        
     fileprivate var scrollAnimationClosures: [() -> Void] = []
     private var popClosure: DispatchWorkItem?
     
@@ -40,11 +41,26 @@ class ViewController: UIViewController, ElectraUI {
     @IBOutlet weak var containerViewYConstraint: NSLayoutConstraint!
     @IBOutlet weak var jailbreakButtonHeightConstraint: NSLayoutConstraint!
     
+    var themeImagePicker: ThemeImagePicker!
+    
+    var activeColourDefault = ""
+    let colorPickerViewController = ColorPickerViewController()
+    
     private var currentView: (UIView & PanelView)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        //This will reset user defaults, used it a lot for testing
+        /*
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+        */
         
+        NotificationCenter.default.addObserver(self, selector: #selector(self.showAlderisPicker(_:)), name: AlderisButton.showAlderisName, object: nil)
+        colorPickerViewController.delegate = self
+ 
         if self.view.bounds.height <= 667 {
             stackView.spacing = 40
             if self.view.bounds.height <= 568 {
@@ -104,34 +120,56 @@ class ViewController: UIViewController, ElectraUI {
             }
         }
         
+        self.themeImagePicker = ThemeImagePicker(presentationController: self, delegate: self)
+        
         NotificationCenter.default.addObserver(self, selector: #selector(updateTheme), name: ThemesManager.themeChangeNotification, object: nil)
         self.updateTheme()
         // Do any additional setup after loading the view.
     }
     
     @objc func updateTheme() {
-        let bgImage = ThemesManager.shared.currentTheme.backgroundImage
-        let bgCenter = ThemesManager.shared.currentTheme.backgroundCenter
-        let bgOverlay = ThemesManager.shared.currentTheme.backgroundOverlay ?? UIColor.clear
-        let enableBlur = ThemesManager.shared.currentTheme.enableBlur
+        let custom = UserDefaults.standard.string(forKey: "theme") == "custom"
+        let customColour = UserDefaults.standard.string(forKey: "theme") == "customColourTheme"
+
+        var bgImage: UIImage?
+        
+        if custom {
+            if UserDefaults.standard.object(forKey: "customImage") == nil {
+                let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                    self.themeImagePicker.present(from: self.view)
+                }))
+                self.present(alert, animated: true)
+                return
+            } else {
+                bgImage = ThemesManager.shared.customImage
+            }
+        } else {
+            bgImage = ThemesManager.shared.currentTheme.backgroundImage
+        }
         
         if let bgImage = bgImage {
-            let aspectHeight = self.view.bounds.height
-            let aspectWidth = self.view.bounds.width
-            
-            let maxDimension = max(aspectHeight, aspectWidth)
-            let isiPad = UIDevice.current.userInterfaceIdiom == .pad
-            
-            backgroundImage.image = ImageProcess.shared.sizeImage(image: bgImage,
-                                                                  aspectHeight: isiPad ? maxDimension : aspectHeight,
-                                                                  aspectWidth: isiPad ? maxDimension : aspectWidth,
-                                                                  center: bgCenter)
+            if custom {
+                backgroundImage.image = bgImage
+            } else {
+                let aspectHeight = self.view.bounds.height
+                let aspectWidth = self.view.bounds.width
+                    
+                let maxDimension = max(aspectHeight, aspectWidth)
+                let isiPad = UIDevice.current.userInterfaceIdiom == .pad
+                
+                backgroundImage.image = ImageProcess.shared.sizeImage(image: bgImage,
+                                                                      aspectHeight: isiPad ? maxDimension : aspectHeight,
+                                                                      aspectWidth: isiPad ? maxDimension : aspectWidth,
+                                                                      center: ThemesManager.shared.currentTheme.backgroundCenter)
+            }
         } else {
             backgroundImage.image = nil
         }
-        backgroundOverlay.backgroundColor = bgOverlay
-        vibrancyView.isHidden = !enableBlur
         
+        if (custom || customColour) { vibrancyView.isHidden = !ThemesManager.shared.customThemeBlur } else { vibrancyView.isHidden = !ThemesManager.shared.currentTheme.enableBlur }
+        
+        backgroundOverlay.backgroundColor = ThemesManager.shared.currentTheme.backgroundOverlay ?? UIColor.clear
         themeCopyrightButton.isHidden = ThemesManager.shared.currentTheme.copyrightString.isEmpty
     }
     
@@ -331,6 +369,31 @@ class ViewController: UIViewController, ElectraUI {
     @IBAction func themeInfo() {
         self.showAlert("Theme Copyright Info", ThemesManager.shared.currentTheme.copyrightString, sync: false)
     }
+    
+    @IBAction func changeCustomImage(_ sender: UIButton) {
+        if UserDefaults.standard.object(forKey: "customImage") == nil {
+            let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
+                self.themeImagePicker.present(from: self.view)
+            }))
+            self.present(alert, animated: true)
+        } else {
+            self.themeImagePicker.present(from: sender)
+        }
+    }
+    
+    @objc public func showAlderisPicker(_ notification: NSNotification) {
+        if let dict = notification.userInfo as NSDictionary? {
+            if let key = dict["default"] as? String {
+                activeColourDefault = key
+            } else {
+                fatalError("Set a key for the colour picker")
+            }
+        }
+        
+        navigationController!.present(colorPickerViewController, animated: true)
+    }
+    
 }
 
 extension ViewController: UIScrollViewDelegate {   
@@ -353,7 +416,9 @@ extension ViewController: UIScrollViewDelegate {
         }
         while view.frame.minX != self.scrollView.contentOffset.x {
             guard view.frame.minX > self.scrollView.contentOffset.x else {
-                fatalError("User dragged the other way???")
+                //I temporarily disabled this because I have no idea why it died, it *seemed* to function the same without
+                //fatalError("User dragged the other way???")
+                return
             }
             popCount += 1
             view = view.parentView
@@ -364,6 +429,17 @@ extension ViewController: UIScrollViewDelegate {
         }
         
         self.resetPopTimer()
+    }
+}
+
+extension ViewController: ThemeImagePickerDelegate {
+    func didSelect(image: UIImage?) {
+        if (image != nil) {
+            UserDefaults.standard.set(image!.pngData(), forKey: "customImage")
+            UserDefaults.standard.synchronize()
+            
+            self.updateTheme()
+        }
     }
 }
 
@@ -413,3 +489,44 @@ func isJailbroken() -> Bool {
     }
     return false
 }
+
+extension ViewController: ColorPickerDelegate {
+    func colorPicker(_ colorPicker: ColorPickerViewController, didSelect color: UIColor) {
+        UserDefaults.standard.set(color, forKey: activeColourDefault)
+        
+        let notification = Notification(name: Notification.Name(ThemesManager.themeChangeNotification.rawValue))
+        NotificationCenter.default.post(notification)
+    }
+}
+
+//Taken from https://stackoverflow.com/questions/1275662/saving-uicolor-to-and-loading-from-nsuserdefaults
+extension UserDefaults {
+
+    func color(forKey key: String) -> UIColor? {
+
+        guard let colorData = data(forKey: key) else { return nil }
+
+        do {
+            return try NSKeyedUnarchiver.unarchivedObject(ofClass: UIColor.self, from: colorData)
+        } catch let error {
+            print("color error \(error.localizedDescription)")
+            return nil
+        }
+
+    }
+
+    func set(_ value: UIColor?, forKey key: String) {
+
+        guard let color = value else { return }
+        do {
+            let data = try NSKeyedArchiver.archivedData(withRootObject: color, requiringSecureCoding: false)
+            set(data, forKey: key)
+        } catch let error {
+            print("error color key data not saved \(error.localizedDescription)")
+        }
+
+    }
+
+}
+
+ 
