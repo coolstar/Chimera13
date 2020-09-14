@@ -416,9 +416,7 @@ extension ViewController: UIScrollViewDelegate {
         }
         while view.frame.minX != self.scrollView.contentOffset.x {
             guard view.frame.minX > self.scrollView.contentOffset.x else {
-                //I temporarily disabled this because I have no idea why it died, it *seemed* to function the same without
-                //fatalError("User dragged the other way???")
-                return
+                fatalError("User dragged the other way???")
             }
             popCount += 1
             view = view.parentView
