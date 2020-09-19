@@ -12,12 +12,12 @@ public protocol ThemeImagePickerDelegate: class {
     func didSelect(image: UIImage?)
 }
 
-open class ThemeImagePicker: NSObject {
+class ThemeImagePicker: NSObject {
     private let pickerController: UIImagePickerController
-    private weak var presentationController: UIViewController?
+    private weak var presentationController: ViewController!
     private weak var delegate: ThemeImagePickerDelegate?
 
-    public init(presentationController: UIViewController, delegate: ThemeImagePickerDelegate) {
+    init(presentationController: ViewController, delegate: ThemeImagePickerDelegate) {
         self.pickerController = UIImagePickerController()
 
         super.init()
@@ -37,7 +37,8 @@ open class ThemeImagePicker: NSObject {
 
         return UIAlertAction(title: title, style: .default) { [unowned self] _ in
             self.pickerController.sourceType = type
-            self.presentationController?.present(self.pickerController, animated: true)
+            self.presentationController.present(self.pickerController, animated: true)
+            self.presentationController.resetPopTimer()
         }
     }
 
@@ -52,15 +53,19 @@ open class ThemeImagePicker: NSObject {
             alertController.addAction(action)
         }
 
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+            self.presentationController.resetPopTimer()
+        }))
 
         if UIDevice.current.userInterfaceIdiom == .pad {
-            alertController.popoverPresentationController?.sourceView = sourceView
-            alertController.popoverPresentationController?.sourceRect = sourceView.bounds
+            let rect = self.presentationController.view.convert(sourceView.bounds, from: sourceView)
+            alertController.popoverPresentationController?.sourceView = self.presentationController.view
+            alertController.popoverPresentationController?.sourceRect = rect
             alertController.popoverPresentationController?.permittedArrowDirections = [.down, .up]
         }
 
-        self.presentationController?.present(alertController, animated: true)
+        self.presentationController.present(alertController, animated: true)
+        self.presentationController.cancelPopTimer()
     }
 
     private func pickerController(_ controller: UIImagePickerController, didSelect image: UIImage?) {

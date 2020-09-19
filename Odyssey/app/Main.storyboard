@@ -1111,15 +1111,9 @@
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="IcR-Tr-bxu" userLabel="Custom Theme View">
                                                                         <rect key="frame" x="0.0" y="0.0" width="245" height="89"/>
                                                                         <subviews>
-                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-CZ-r73" userLabel="Modify">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ROb-CZ-r73" userLabel="Modify" customClass="TableButton" customModule="Odyssey" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="245" height="44"/>
                                                                                 <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Abp-GR-pOA" userLabel="Theme Selector">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="245" height="44"/>
-                                                                                        <connections>
-                                                                                            <action selector="changeCustomImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="57N-Uj-I3c"/>
-                                                                                        </connections>
-                                                                                    </button>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x3j-yn-MDU">
                                                                                         <rect key="frame" x="15" y="10" width="110" height="24"/>
                                                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
@@ -1130,13 +1124,12 @@
                                                                                 <constraints>
                                                                                     <constraint firstItem="x3j-yn-MDU" firstAttribute="top" secondItem="ROb-CZ-r73" secondAttribute="top" constant="10" id="4fa-mf-qMf"/>
                                                                                     <constraint firstItem="x3j-yn-MDU" firstAttribute="leading" secondItem="ROb-CZ-r73" secondAttribute="leading" constant="15" id="SJq-2l-Cbf"/>
-                                                                                    <constraint firstItem="Abp-GR-pOA" firstAttribute="leading" secondItem="ROb-CZ-r73" secondAttribute="leading" id="Tu2-lb-tuH"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="Abp-GR-pOA" secondAttribute="bottom" id="Uuq-d5-JKi"/>
                                                                                     <constraint firstAttribute="bottom" secondItem="x3j-yn-MDU" secondAttribute="bottom" constant="10" id="VVI-FC-Wmo"/>
                                                                                     <constraint firstAttribute="height" constant="44" id="WYb-ac-1Pp"/>
-                                                                                    <constraint firstItem="Abp-GR-pOA" firstAttribute="top" secondItem="ROb-CZ-r73" secondAttribute="top" id="blz-fR-dgb"/>
-                                                                                    <constraint firstAttribute="trailing" secondItem="Abp-GR-pOA" secondAttribute="trailing" id="zc0-hg-2y2"/>
                                                                                 </constraints>
+                                                                                <connections>
+                                                                                    <action selector="changeCustomImage:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SpS-fh-TcO"/>
+                                                                                </connections>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ow4-M6-t3C" customClass="SeparatorView" customModule="Odyssey" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="44" width="245" height="1"/>

@@ -3,6 +3,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Alderis.h"
 
 @interface UIApplication(Private)
 - (void)suspend;

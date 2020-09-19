@@ -54,12 +54,17 @@ class Electra {
 }
 
 var tfpzero: mach_port_t = mach_port_t(MACH_PORT_NULL)
+var task_self: UInt64 = 0
 
 func isArm64e() -> Bool {
     false
 }
 
 func tardy0n() {
+    
+}
+
+func get_tfp0() {
     
 }
 

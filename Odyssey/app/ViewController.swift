@@ -372,9 +372,10 @@ class ViewController: UIViewController, ElectraUI {
     
     @IBAction func changeCustomImage(_ sender: UIButton) {
         if UserDefaults.standard.object(forKey: "customImage") == nil {
+            self.cancelPopTimer()
             let alert = UIAlertController(title: "Note", message: "This jailbreak is a tribute, please don't be disrespectful.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: { action in
-                self.themeImagePicker.present(from: self.view)
+                self.themeImagePicker.present(from: sender)
             }))
             self.present(alert, animated: true)
         } else {
