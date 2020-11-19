@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B308DD124F9BD2D008095E4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B308DD024F9BD2D008095E4 /* Reachability.swift */; };
-		1B426606252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B426605252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb */; };
-		1B42662E252EAF22007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb in Resources */ = {isa = PBXBuildFile; fileRef = 1B426605252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb */; };
+		1BDA0C432567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb in Frameworks */ = {isa = PBXBuildFile; fileRef = 1BDA0C3D2567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb */; };
+		1BDA0C4525671534009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb in Resources */ = {isa = PBXBuildFile; fileRef = 1BDA0C3D2567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb */; };
 		360512E024B10E5700DFD3AF /* UICircularRing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360512D824B10E5700DFD3AF /* UICircularRing.swift */; };
 		360512E124B10E5700DFD3AF /* UICircularRingLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360512D924B10E5700DFD3AF /* UICircularRingLayer.swift */; };
 		360512E224B10E5700DFD3AF /* UICircularRingStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 360512DA24B10E5700DFD3AF /* UICircularRingStyle.swift */; };
@@ -237,7 +237,7 @@
 
 /* Begin PBXFileReference section */
 		1B308DD024F9BD2D008095E4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		1B426605252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb"; sourceTree = "<group>"; };
+		1BDA0C3D2567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb"; sourceTree = "<group>"; };
 		360512D824B10E5700DFD3AF /* UICircularRing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICircularRing.swift; sourceTree = "<group>"; };
 		360512D924B10E5700DFD3AF /* UICircularRingLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICircularRingLayer.swift; sourceTree = "<group>"; };
 		360512DA24B10E5700DFD3AF /* UICircularRingStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICircularRingStyle.swift; sourceTree = "<group>"; };
@@ -351,7 +351,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B426606252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb in Frameworks */,
+				1BDA0C432567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +599,7 @@
 				F1F551D9246E585C001CE9FB /* bootstrap.tar.gz */,
 				36113C792484442A007A2C41 /* essential_0-3_iphoneos-arm.deb */,
 				F13C1675243C0E3300194BF3 /* signcert.p12 */,
-				1B426605252EA84E007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb */,
+				1BDA0C3D2567151F009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb */,
 				F1F551E7246E677D001CE9FB /* tar.gz */,
 			);
 			path = resources;
@@ -749,7 +749,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B42662E252EAF22007D7BDB /* org.coolstar.sileo_2.0.0b6_iphoneos-arm.deb in Resources */,
+				1BDA0C4525671534009FAE29 /* org.coolstar.sileo_2.0.0b7_iphoneos-arm.deb in Resources */,
 				36C0994624A456390043250A /* LaunchScreen.storyboard in Resources */,
 				F13C1676243C108D00194BF3 /* signcert.p12 in Resources */,
 				F191A9BF2432EC17005E0F8F /* BuildConfigs.xcconfig in Resources */,
