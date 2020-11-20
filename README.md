@@ -1,4 +1,8 @@
-# Odyssey
+<center>
+  <a href="#"><img src="https://i.imgur.com/hDqP9sV.png" alt="Logo"></a>
+</center>
+
+<a href="#"><img src="https://i.imgur.com/y4oV9VV.png" alt="colored line"></a>
 
 This is the project for the Odyssey jailbreak.
 
@@ -28,3 +32,7 @@ All A9-A13 devices on iOS 13.0-13.5
 Odyssey is licensed under the 3-Clause BSD License
 
 Note: should you choose to include time_waste, you must license the project as GPL. If you choose to only use tardy0n, you may license it as BSD-3.
+
+# Credits
+
+Kind regards to [syns](https://github.com/syns) for his assistance with this readme
